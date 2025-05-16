@@ -6,6 +6,9 @@
 
 #ifndef MANAGER_H_
 #define MANAGER_H_
+
+// El display Manager está compuesto de translators.
+
 #include "translator.h"
 #include <string>
 using namespace std;
@@ -22,10 +25,18 @@ class DisplayManager{
     public:
     DisplayManager(): Idioma("") , Original(""), Estilo(""), Traduccion(""), Pronunciacion("") {}; //constructor por default
     // Getters
-    string getOriginal(); //Guarda el texto
-    string getTraduccion();
-    string getPronunciacion();
-    string getIdioma();
+    string getOriginal(){
+        return Original;
+    }; //Guarda el texto
+    string getTraduccion(){
+        return Traduccion;
+    };
+    string getPronunciacion(){
+        return Pronunciacion;
+    };
+    string getIdioma(){
+        return Idioma;
+    };
     
     //Setters
         void setOriginal(string original){

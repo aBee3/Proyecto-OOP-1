@@ -52,32 +52,6 @@ class Traductor{
 
 };
 
-// CHILD CLASSES: IDIOMAS
-//CHINO
-class traductorChino: public Traductor {
-    // Atributos
-    private:
-    string Pinyin;
-    string Pronunciation;
-
-    // Constructor
-    traductorChino(): Traductor("chino", "traducción"){};
-    traductorChino(string pinyin, string pronunciacion): Traductor(textoOriginal, textoTraducido)
-        {
-        Pinyin = pinyin;
-        Pronunciation = pronunciacion;
-        }
-
-    public: 
-    //Getters
-    string getPronunciation(){
-        return Pronunciation;
-    }
-    // Método
-    string traducir(){
-        return textoTraducido;
-    }
-};
 
 // JAPONES
 class traductorJapones: public Traductor {
