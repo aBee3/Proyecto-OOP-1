@@ -1,9 +1,8 @@
-//Aquí empezaré a hacer el main, las clases irán en archivos separados
-#include <iostream>
-#include "displayManager.h"
-using namespace std;
+#include "Traductor.h"
+#include "TextoJapones.h"
+#include "TextoChino.h"
 
 int main() {
-    cout << "Compila correctamente" << endl;
+    // Por ahora vacío.  Compila todo junto. :)
     return 0;
 }
