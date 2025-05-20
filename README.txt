@@ -1,5 +1,5 @@
 Creador de Glosario en Chino del español.
-El objetivo del programa es, primero traducir una frase del chino al español, luego armar una lectura con 3 frases distintas: la frase original en chino / japonés, la pronunciación y la traducción, además de un glosario con las palabras más usadas.
+El objetivo del programa es, primero traducir una frase del chino al español, luego armar una lectura con 3 frases distintas: la frase original en chino / español, la pronunciación y la traducción, además de un glosario con las palabras más usadas.
 
 Clases
 Texto: El texto tiene el método "traducir" que recibe el idioma de origen, de destino y el "estilo" que indica si buscas obtener la traducción o la pronunciación. Luego esto lo guarda como "traducción", "pronunciación". Los métodos incluyen un constructor con el idioma de origen los getters y los setters de estos atributos y el método traducir dependiente del idioma de origen, que es un método virtual pues responderá de forma distinta.
