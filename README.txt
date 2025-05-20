@@ -1,22 +1,24 @@
-README
+Creador de Glosario en Chino del español.
+El objetivo del programa es, primero traducir una frase del chino al español, luego armar una lectura con 3 frases distintas: la frase original en chino / japonés, la pronunciación y la traducción, además de un glosario con las palabras más usadas.
 
-Mi proyecto es un programa que traduce tu texto a diferentes formas de texto, usando alfabetos de otros idiomas.
-Por ejemplo, tu puedes dar la palabra "CHOCOLATE" y traducirlo al abecedario japonés, chino y koreano de forma literal.
-Estarán las siguientes clases:
-1. displayManager:
-RESPONSABIILIDADES:
-- Recibe y guarda el texto original
-- Traduce el texto al idioma solicitado
-- Guarda la traducción en otro documento de texto
-- Muestra la traducción en consola
-- Compila las traducciones de dos sistemas en un idioma.
+Clases
+Texto: El texto tiene el método "traducir" que recibe el idioma de origen, de destino y el "estilo" que indica si buscas obtener la traducción o la pronunciación. Luego esto lo guarda como "traducción", "pronunciación". Los métodos incluyen un constructor con el idioma de origen los getters y los setters de estos atributos y el método traducir dependiente del idioma de origen, que es un método virtual pues responderá de forma distinta.
 
-ATRIBUTOS
-- display(string: texto)
-- display
+Derivadas de Texto:
+a) Texto Chino: método de traducción chino-español, además del idioma destino distinto.
+b) Texto Español: método de traducción español - chino.
 
-2. traductor: traduce el texto (usando quizás el traductor o un diccionario), y regresa la versión traducida
+Traductor (clase principal): encargada de recibir el texto original y el idioma en el que está (español o chino). Traductor está compuesto de texto, hace uso de los métodos de texto implementando apuntadores para obtener la traducción y la pronunciación de la frase. Finalmente el traductor arma un string de lectura y otro de glosario que serán escritas en un archivo de texto y exportadas al final.
+Atributos: texto, glosario y lectura. Además tendrá acceso a los atributos de TEXTO por medio de los apuntadores como lo son el texto.original, texto.traduccion, texto.pronunciacion. Sus métodos incluyen el de armarGlosario() y armarLectura() y finalmente el de exportar() que es el encargado de pasarlo a un archivo de texto.
 
-2.1 traudctorChino: traduce a chino y regresa la pronunciación (pinyin) y el texto en chino
-2.2 traductorJaponés: traduce al japonés y regressa la traducción en japonés y la pronunciación (hiragana)
+Proceso ideal:
+Ingresa tu idioma origen: "Español"
+Ingresa tu texto: "Me gusta ver películas en casa".
+Traducción: "我喜欢在家看电影"
+Pronunciación: "Wǒ xǐhuān zàijiā kàn diànyǐng".
+Glosario has been exported. <- glosario.txt
+Lectura has been exported. <- lectura.txt
+
+Casos de Fallo
+Los casos en los que el programa fallará es si se inserta una frase en cualquier otro idioma o si no se especifica adecuadamente el idioma en el que la frase está (español, chino), si se inserta una frase en inglés, el programa fallará.
 
