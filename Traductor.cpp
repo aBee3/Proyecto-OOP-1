@@ -1,31 +1,41 @@
 #include "Traductor.h"
+using namespace std;
 
 // CONSTRUCTOR
 Traductor::Traductor()
 {
+    original = "Me gusta el mango amarillo.";
+    idioma = "Español";
     texto    = nullptr;
     lectura  = "";
     glosario = "";
 }
 
-// CONSTRUCTOR (recibe pointer hacia Texto)
-Traductor::Traductor(Texto* t)
-{
-    texto    = t; // el puntero
-    lectura  = "";
-    glosario = "";
+//Constructor
+Traductor::Traductor(string idioma, string original) {
+	texto = new Texto(original, idioma);
 }
 
 // DESTRUCTOR
-Traductor::~Traductor()
-{
-    delete texto;  // 
+Traductor::~Traductor() {
+	delete texto;
+}
+// SETTERS
+void Traductor:: setOriginal(std::string ori){
+    original = ori;
 }
 
-// SETTER
-void Traductor::setTexto(Texto* t)
-{
-    texto = t;
+void Traductor::setIdioma(string Idioma){
+    idioma = Idioma;
+}
+
+// GETTERS
+string Traductor::getOriginal(){
+    return string(original);
+}
+
+string Traductor::getIdioma(){
+    return string(idioma);
 }
 
 // MÉTODOS PARA GLOSARIO Y LECTURA
@@ -41,8 +51,6 @@ void Traductor::armarLectura(const std::string& traduccion,
     if (texto)
         lectura = texto->getOriginal() + "\n" + pronunciacion + "\n" + traduccion;
 }
-
-// Si pongo pasarelas aquí las pondría pero no creo 
 
 // MÉTODOS faltantes
 void Traductor::mostrarTraduccion()   const { /* falta */ }

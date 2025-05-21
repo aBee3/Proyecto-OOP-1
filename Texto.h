@@ -1,43 +1,41 @@
 #ifndef TEXTO_H
 #define TEXTO_H
 
+using namespace std;
 #include <string>
 
 class Texto
 {
 protected:
-    std::string original;
-    std::string idioma;
-    std::string traduccion;
-    std::string pronunciacion;
-    std::string estilo;
+    string original;
+	string idioma;
+	string estilo;
+	string traduccion;
+	string pronunciacion;
 
 public:
     // CONSTRUCTORES
     Texto();
-    explicit Texto(const std::string& original);
-    Texto(const std::string& original, const std::string& estilo);
+    Texto(string ori, string idi);
     virtual ~Texto() = default;   // DESTRUCTOR 
 
     // SETTERS
-    void setOriginal(const std::string& txt);
-    void setTraduccion(const std::string& txt);
-    void setPronunciacion(const std::string& txt);
-    void setIdioma(const std::string& lang);
-    void setEstilo(const std::string& est);
+    void setOriginal( string Original);
+    void setTraduccion(string Traduccion);
+    void setPronunciacion(string Pronunciacion);
+    void setIdioma(string Idioma);
+    void setEstilo(string Estilo);
 
     // GETTERS
-    std::string getOriginal()       const;
-    std::string getTraduccion()     const;
-    std::string getPronunciacion()  const;
-    std::string getIdioma()         const;
-    std::string getEstilo()         const;
+    string getOriginal()       ;
+    string getTraduccion()     ;
+    string getPronunciacion()  ;
+    string getIdioma()         ;
+    string getEstilo()         ;
 
     // MÉTODOS (sobrecarga + sobrescritura)
     virtual void traducir();
-    virtual void traducir(const std::string& original,
-                          const std::string& idioma,
-                          const std::string& estilo);
+    virtual void traducir(string ori, string idi, string est);
 };
 
 #endif

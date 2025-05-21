@@ -3,23 +3,34 @@
 
 #include <string>
 #include "Texto.h"
+using namespace std;
 
 class Traductor
 {
 private:
-    Texto* texto;            // PUNTERO PARA POLIMORFISMO
+    Texto* texto;            // PUNTERO
+    std::string idioma;
+    std::string original;
     std::string lectura;
     std::string glosario;
 
 public:
     // CONSTRUCTOR
-    Traductor();
-    explicit Traductor(Texto* t);
-    // DESTRUCTOR
-    ~Traductor();  // ignoren por ahora pero es para el polimorfismo
+    Traductor(); // default
+    Traductor(string idioma, string original);
+
+    // Destructor (limpiar)
+    ~Traductor();  
 
     // SETTER
-    void setTexto(Texto* t);
+    void setOriginal(std::string original);
+    void setIdioma(string idioma);
+
+
+    //GETTERS
+    string getOriginal();
+    string getIdioma();
+
 
     // MÉTODOS
     void armarGlosario(const std::string& traduccion,

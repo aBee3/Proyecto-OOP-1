@@ -1,13 +1,13 @@
-#ifndef TEXTO_JAPONES_H
-#define TEXTO_JAPONES_H
+#ifndef TEXTO_ESPAÑOL_H
+#define TEXTO_ESPAÑOL_H
 
 #include "Texto.h"
 
-class TextoJapones : public Texto
+class TextoEspañol : public Texto
 {
 public:
     // CONSTRUCTOR
-    TextoJapones(const std::string& original, const std::string& estilo);
+    TextoEspañol(const std::string& original, const std::string& estilo);
 
     // OVERRIDE & OVERLOAD
     void traducir() override;
