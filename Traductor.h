@@ -9,28 +9,29 @@ class Traductor
 {
 private:
     Texto* texto;            // PUNTERO
-    std::string idioma;
-    std::string original;
-    std::string lectura;
-    std::string glosario;
+    string idioma;
+    string original;
+    string lectura;
+    string glosario;
 
 public:
     // CONSTRUCTOR
     Traductor(); // default
-    Traductor(string idioma, string original);
+    Traductor(string idioma, const string&  original, string estilo);
 
     // Destructor (limpiar)
     ~Traductor();  
 
     // SETTER
-    void setOriginal(std::string original);
+    void setOriginal(const string&  original);
     void setIdioma(string idioma);
 
 
     //GETTERS
     string getOriginal();
     string getIdioma();
-
+    string getGlosario();
+    string getLectura();
 
     // MÉTODOS
     void armarGlosario(const std::string& traduccion,

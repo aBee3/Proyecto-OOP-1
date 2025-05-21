@@ -7,20 +7,20 @@ using namespace std;
 class Texto
 {
 protected:
-    string original;
-	string idioma;
+    string idioma;
 	string estilo;
+    string original;
 	string traduccion;
 	string pronunciacion;
 
 public:
     // CONSTRUCTORES
     Texto();
-    Texto(string ori, string idi);
+    Texto(string Idi, string Ori);
     virtual ~Texto() = default;   // DESTRUCTOR 
 
     // SETTERS
-    void setOriginal( string Original);
+    void setOriginal(string Original);
     void setTraduccion(string Traduccion);
     void setPronunciacion(string Pronunciacion);
     void setIdioma(string Idioma);
@@ -35,7 +35,7 @@ public:
 
     // MÉTODOS (sobrecarga + sobrescritura)
     virtual void traducir();
-    virtual void traducir(string ori, string idi, string est);
+    virtual void traducir(const string& ori, string idi, string est);
 };
 
 #endif

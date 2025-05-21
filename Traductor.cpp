@@ -12,8 +12,8 @@ Traductor::Traductor()
 }
 
 //Constructor
-Traductor::Traductor(string idioma, string original) {
-	texto = new Texto(original, idioma);
+Traductor::Traductor(string idioma, const string&  original, string estilo) {
+	texto = new Texto(idioma, original);
 }
 
 // DESTRUCTOR
@@ -21,7 +21,7 @@ Traductor::~Traductor() {
 	delete texto;
 }
 // SETTERS
-void Traductor:: setOriginal(std::string ori){
+void Traductor:: setOriginal(const string&  ori){
     original = ori;
 }
 
@@ -31,25 +31,36 @@ void Traductor::setIdioma(string Idioma){
 
 // GETTERS
 string Traductor::getOriginal(){
-    return string(original);
+    return original;
 }
+
 
 string Traductor::getIdioma(){
     return string(idioma);
+}
+
+string Traductor::getGlosario()
+{
+return string(glosario);
+}
+
+string Traductor::getLectura()
+{
+return string(lectura);
 }
 
 // MÉTODOS PARA GLOSARIO Y LECTURA
 void Traductor::armarGlosario(const std::string& traduccion,
                               const std::string& pronunciacion)
 {
-    glosario = traduccion + " — " + pronunciacion;
+    const string& glosario = traduccion + " — " + pronunciacion;
 }
 
 void Traductor::armarLectura(const std::string& traduccion,
                              const std::string& pronunciacion)
 {
     if (texto)
-        lectura = texto->getOriginal() + "\n" + pronunciacion + "\n" + traduccion;
+        const string& lectura = texto->getOriginal() + "\n" + pronunciacion + "\n" + traduccion;
 }
 
 // MÉTODOS faltantes
