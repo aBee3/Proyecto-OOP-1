@@ -4,11 +4,16 @@ using namespace std;
 // CONSTRUCTOR
 Traductor::Traductor()
 {
-    original = "Me gusta el mango amarillo.";
-    idioma; // 1 = Español, 2 = Chino
+    original = "";
+    idioma   =  1;        // 1 = Español, 2 = Chino
     texto    = nullptr;
     lectura  = "";
     glosario = "";
+}
+
+Traductor::Traductor(int idi, const string & ori){
+    idioma = idi;
+    original = ori;
 }
 
 //Constructor

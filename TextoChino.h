@@ -12,7 +12,7 @@ public:
 
     // OVERRIDE & OVERLOAD
     void traducir() override;
-    void traducir(const std::string& ori, int idi, int est) override; //para la sobre escritura
+    void traducir(const std::string& ori, const int& est) override; //para la sobre escritura
 };
 
 #endif

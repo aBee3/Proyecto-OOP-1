@@ -33,7 +33,7 @@ public:
 
     // MÉTODOS (sobrecarga + sobrescritura)
     virtual void traducir();
-    virtual void traducir(const std::string& ori, int idi, int est);
+    virtual void traducir(const std::string& original, const int& estilo);
 };
 
 #endif

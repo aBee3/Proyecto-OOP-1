@@ -17,6 +17,7 @@ private:
 public:
     // CONSTRUCTOR
     Traductor(); // default
+    Traductor(int idi, const string&  ori);
     Traductor(int idioma, const string&  original, string estilo);
 
     // Destructor (limpiar)
