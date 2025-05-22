@@ -43,3 +43,4 @@ void Texto::traducir(const std::string&  ori, int idi, int est) {
     estilo = 2;
     original = "clase base";
 }
+
