@@ -6,21 +6,25 @@ using namespace std;
 // CONSTRUCTOR
 Traductor::Traductor()
 {
-
     original = "";
     idioma   =  1;        
-    std::vector<std::string> idiomas = {"Español", "Chino"};
     texto    = nullptr;
     lectura  = "";
     glosario = "";
 }
 
-Traductor::Traductor(int idi, const string & ori){
+// Inicializar Traductor con parámetros del usuario
+
+Traductor::Traductor(){
+    std::vector<std::string> idiomas = {"Español", "Chino"};
     std::cout << "Ingrese el idioma de origen \n     0 = Español\n     1 = Chino ";
     std::cin >> idioma; // Guardamos el idioma de origen
     std::cout << "Ingresa tu texto en " << idiomas[idioma] << std::endl;
     std::cin >> original; // Guardamos el texto original
     std::cout << "Traducir tu texto\n-->\n" << original << "\n\n Al idioma\n-> "<< idiomas[idioma] << "?"<< std::endl;
+}
+
+Traductor::Traductor(int idi, const string & ori){
 }
 
 //Constructor
