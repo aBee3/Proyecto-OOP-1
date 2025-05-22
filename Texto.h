@@ -14,6 +14,7 @@ protected:
 public:
     // CONSTRUCTORES
     Texto();
+    Texto(int idioma);
     Texto(int Idi, std::string Ori);
     virtual ~Texto() = default;   // DESTRUCTOR 
 

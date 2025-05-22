@@ -4,80 +4,85 @@
 using namespace std;
 
 // CONSTRUCTOR
-Traductor::Traductor()
-{
-    original = "";
+Traductor::Traductor(){
+    index = 0;
+    cantidad = 10;
+    textos.resize(10, nullptr);
     idioma   =  1;        
-    texto    = nullptr;
+    lectura  = "";
+    glosario = "";
+    std::cout<<"Traductor default creado"<<endl;
+}
+
+
+Traductor::Traductor(int cant){
+    index = 0;
+    cantidad = cant;
+    textos.resize(cantidad, nullptr); 
+    idioma   =  1;        
     lectura  = "";
     glosario = "";
 }
 
-// Inicializar Traductor con parámetros del usuario
-
-Traductor::Traductor(){
-    std::vector<std::string> idiomas = {"Español", "Chino"};
-    std::cout << "Ingrese el idioma de origen \n     0 = Español\n     1 = Chino ";
-    std::cin >> idioma; // Guardamos el idioma de origen
-    std::cout << "Ingresa tu texto en " << idiomas[idioma] << std::endl;
-    std::cin >> original; // Guardamos el texto original
-    std::cout << "Traducir tu texto\n-->\n" << original << "\n\n Al idioma\n-> "<< idiomas[idioma] << "?"<< std::endl;
-}
-
-Traductor::Traductor(int idi, const string & ori){
-}
-
-//Constructor
-Traductor::Traductor(int idioma, const string&  original, string estilo) {
-	texto = new Texto(idioma, original);
-}
-
 // DESTRUCTOR
 Traductor::~Traductor() {
-	delete texto;
-}
+	for (auto texto : textos) {
+            delete texto;
+}}
+
 // SETTERS
-void Traductor:: setOriginal(const string&  ori){
-    original = ori;
+void Traductor:: setCantidad(const int&  cant){
+    cantidad = cant;
 }
 
-void Traductor::setIdioma(int Idioma){
-    idioma = Idioma;
+void Traductor::setIndex(const int & ind){
+    index = ind;
+}
+
+void Traductor::setLectura(const std::string & lect){
+    lectura = lect;
+}
+
+void Traductor::setGlosario(const std::string & glos){
+    glosario = glos;
 }
 
 // GETTERS
-string Traductor::getOriginal(){
-    return original;
+int Traductor::getCantidad(){
+    return cantidad;
+}
+
+int Traductor::getIndex(){
+    return index;
+}
+
+string Traductor::getGlosario(){
+    return string(glosario);
+}
+
+string Traductor::getLectura(){
+    return string(lectura);
 }
 
 
-int Traductor::getIdioma(){
-    return int(idioma);
+// MÉTODOS
+void Traductor::addTexto(){
+    textos[index] = new Texto(1); // el uno es porque quiero el método sobreescrito que pide al usuario agregar texto
+    
+    setIndex(index);
 }
 
-string Traductor::getGlosario()
-{
-return string(glosario);
-}
-
-string Traductor::getLectura()
-{
-return string(lectura);
-}
-
-// MÉTODOS PARA GLOSARIO Y LECTURA
 void Traductor::armarGlosario(const std::string& traduccion, const std::string& pronunciacion){
     const string& glosario = traduccion + " — " + pronunciacion;
 }
-
-void Traductor::armarLectura(const std::string& traduccion, const std::string& pronunciacion){
-    if (texto)
-    const string& lectura = texto->getOriginal() + "\n" + pronunciacion + "\n" + traduccion;
-}
+void Traductor::armarLectura(const std::string& traduccion, const std::string& pronunciacion){}
 
 // MÉTODOS faltantes
-void Traductor::mostrarTraduccion()   const { /* falta */ }
-void Traductor::mostrarPronunciacion()const { /* falta */ }
+void Traductor::mostrarTraducciones()   const { /* falta */ }
+void Traductor::mostrarPronunciaciones()const { /* falta */ }
+void Traductor::mostrarTextos() const{ }
+
+// Exportar lo hecho por el traductor a formato de texto
 void Traductor::exportar()            const { /* falta */ }
 
 // Método para crear ejemplos de traductores

@@ -2,49 +2,51 @@
 #define TRADUCTOR_H
 
 #include <string>
+#include <vector>
 #include "Texto.h"
 using namespace std;
 
 class Traductor
 {
 private:
-    Texto* texto;            // PUNTERO
+    std::vector<Texto*> textos;            // PUNTERO con 10 objetos texto
     int idioma;
-    std::string original;
+    int cantidad;
+    int index;
     std::string lectura;
     std::string glosario;
 
 public:
     // CONSTRUCTOR
     Traductor(); // default
-    Traductor(int idi, const string&  ori);
-    Traductor(int idioma, const string&  original, string estilo);
+    Traductor(int cantidad);
 
     // Destructor (limpiar)
     ~Traductor();  
 
     // SETTER
-    void setOriginal(const string&  original);
-    void setIdioma(int idioma);
-
+    void addTexto();
+    void setCantidad(const int&  ori);
+    void setIndex(const int& ind);
+    void setLectura(const std::string& lect);
+    void setGlosario(const std::string& glos);
 
     //GETTERS
-    std::string getOriginal();
-    int getIdioma();
+    int getCantidad();
+    int getIndex();
     std::string getGlosario();
     std::string getLectura();
 
     // MÉTODOS
-    void armarGlosario(const std::string& traduccion,
-                       const std::string& pronunciacion);
-    void armarLectura(const std::string& traduccion,
-                      const std::string& pronunciacion);
-
-    // No sé si deba usar pasarelas o los pointers
+    void armarGlosario(const std::string& trad,
+                       const std::string& pron);
+    void armarLectura(const std::string& trad,
+                      const std::string& pron);
 
     // Métodos reales
-    void mostrarTraduccion() const;
-    void mostrarPronunciacion() const;
+    void mostrarTraducciones() const;
+    void mostrarPronunciaciones() const;
+    void mostrarTextos() const;
     void ejemplo() const;
     void exportar() const;
 };

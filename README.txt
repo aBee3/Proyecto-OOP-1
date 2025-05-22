@@ -21,4 +21,5 @@ Lectura has been exported. <- lectura.txt
 
 Casos de Fallo
 Los casos en los que el programa fallará es si se inserta una frase en cualquier otro idioma o si no se especifica adecuadamente el idioma en el que la frase está (español, chino), si se inserta una frase en inglés, el programa fallará.
-
+1. No funcionará si el texto no está en chino.
+2. No funcionará si te equivocas al agregar un texto.

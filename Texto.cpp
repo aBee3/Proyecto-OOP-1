@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Texto.h"
-
+#include <vector>
 
 // CONSTRUCTOR (vacío)
 Texto::Texto(){
@@ -10,6 +10,17 @@ Texto::Texto(){
     std::string pronunciacion  = "";
     estilo         = 1; // Traducción por default
     idioma         = 1; // Español por default 
+}
+
+// Aquí le voy a poner un int sólo para diferenciar que este inicializa todo.
+Texto::Texto(int idioma){
+    int ans = 0;
+    std::vector<std::string> idiomas = {"Español", "Chino"};
+    std::cout << "Ingrese el idioma de origen \n     0 = Español\n     1 = Chino\n\n";
+    std::cin >> idioma; // Guardamos el idioma de origen
+    std::cout << "Ingresa tu texto en " << idiomas[idioma] <<"\n"<< std::endl;
+    std::cin >> original; // Guardamos el texto original
+    std::cout << "LISTO"<< std::endl;
 }
 
 Texto::Texto(int Idi, std::string Ori){
