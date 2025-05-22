@@ -39,7 +39,7 @@ void Texto::traducir() {
     original = "Método traducir base";
     std::cout << original;
  }
-void Texto::traducir(const std::string&  ori, int est) { 
+void Texto::traducir(const std::string&  ori, const int& est) { 
     estilo = 2;
     original = "clase base";
 }

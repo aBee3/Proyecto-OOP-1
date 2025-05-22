@@ -13,7 +13,7 @@
 
 int main() {
     // Variables para inicializar el traductor
-    int idioma      = 1;
+    int idioma      = 0;
     string original = "Hola";
     std::vector<std::string> idiomas = {"Español", "Chino"};
 
@@ -21,7 +21,7 @@ int main() {
     Traductor traductor = Traductor();
 
     std::cout << "Bienvenido al creador de lecturas CHINO - ESPAÑOL ";
-    std::cout << "Ingrese el idioma de origen \n 1= Español\n2 = Chino ";
+    std::cout << "Ingrese el idioma de origen \n     0 = Español\n     1 = Chino ";
     std::cin >> idioma; // Guardamos el idioma de origen
     std::cout << "Ingresa tu texto en " << idiomas[idioma] << std::endl;
 

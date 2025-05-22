@@ -1,0 +1,5 @@
+Primero compila todo usando:
+g++ *.cpp -o a
+
+Luego Corre el código con 
+.\a.exe

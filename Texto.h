@@ -5,9 +5,9 @@
 class Texto
 {
 protected:
-    int idioma;                     // 1 = Español, 2 = Chino
+    int idioma;                     // 0 = Español,    1 = Chino
 	int estilo;
-    std::string original;           // 1 = Traducción, 2 = Pronunciación
+    std::string original;           // 0 = Traducción, 1 = Pronunciación
 	std::string traduccion;
 	std::string pronunciacion;
 
