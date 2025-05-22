@@ -1,41 +1,39 @@
 #ifndef TEXTO_H
 #define TEXTO_H
-
-using namespace std;
 #include <string>
 
 class Texto
 {
 protected:
-    string idioma;
-	string estilo;
-    string original;
-	string traduccion;
-	string pronunciacion;
+    int idioma;                     // 1 = Español, 2 = Chino
+	int estilo;
+    std::string original;           // 1 = Traducción, 2 = Pronunciación
+	std::string traduccion;
+	std::string pronunciacion;
 
 public:
     // CONSTRUCTORES
     Texto();
-    Texto(string Idi, string Ori);
+    Texto(int Idi, std::string Ori);
     virtual ~Texto() = default;   // DESTRUCTOR 
 
     // SETTERS
-    void setOriginal(string Original);
-    void setTraduccion(string Traduccion);
-    void setPronunciacion(string Pronunciacion);
-    void setIdioma(string Idioma);
-    void setEstilo(string Estilo);
+    void setOriginal(std::string Original);
+    void setTraduccion(std::string Traduccion);
+    void setPronunciacion(std::string Pronunciacion);
+    void setIdioma(int Idioma);
+    void setEstilo(int Estilo);
 
     // GETTERS
-    string getOriginal()       ;
-    string getTraduccion()     ;
-    string getPronunciacion()  ;
-    string getIdioma()         ;
-    string getEstilo()         ;
+    std::string getOriginal()       ;
+    std::string getTraduccion()     ;
+    std::string getPronunciacion()  ;
+    int getIdioma()         ;
+    int getEstilo()         ;
 
     // MÉTODOS (sobrecarga + sobrescritura)
     virtual void traducir();
-    virtual void traducir(const string& ori, string idi, string est);
+    virtual void traducir(const std::string& ori, int idi, int est);
 };
 
 #endif

@@ -1,11 +1,16 @@
+#include <iostream>
 #include "TextoChino.h"
 
 /* constructor */
-TextoChino::TextoChino(const std::string& original,
-                           const std::string& estilo)
-        : Texto(original, estilo) {}
+TextoChino::TextoChino(const std::string& original, const int& estilo): Texto(idioma, original) {
+
+}
 
 /* traducción — por ahora vacío */
-void TextoChino::traducir() { /* TODO */ }
-void TextoChino::traducir(const std::string&, const std::string&,
-                            const std::string&) { /* TODO */ }
+void TextoChino::traducir() {
+
+}
+void TextoChino::traducir(const std::string&, const int&, const int&) {
+        original = "override";
+        std::cout << "Hello, World!";
+}

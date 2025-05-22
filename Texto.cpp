@@ -1,37 +1,45 @@
+#include <iostream>
 #include "Texto.h"
+
 
 // CONSTRUCTOR (vacío)
 Texto::Texto(){
     // Como el texto puede que sea largo, usaré referencias y const para estas variables.
-    string original       = "";
-    string traduccion     = "";
-    string pronunciacion  = "";
-    estilo         = "";
-    idioma         = "";
+    std::string original       = "";
+    std::string traduccion     = "";
+    std::string pronunciacion  = "";
+    estilo         = 1; // Traducción por default
+    idioma         = 1; // Español por default 
 }
 
-Texto::Texto(string Idi, string Ori){
-    string original = Ori;
-    string traduccion = "";
-    string pronunciacion = "";
-    estilo ="";
-    idioma = Idi;
+Texto::Texto(int Idi, std::string Ori){
+    std::string original = Ori;
+    std::string traduccion = "";
+    std::string pronunciacion = "";
+    estilo = 1;
+    idioma = 1;
 }
 
 // SETTERS
-void Texto::setOriginal(string txt)      { string  original      = txt; }
-void Texto::setTraduccion(string txt)    { string traduccion    = txt; }
-void Texto::setPronunciacion(string txt) { string  pronunciacion = txt; }
-void Texto::setIdioma(string lang)              { idioma        = lang; }
-void Texto::setEstilo(string est)               { estilo        = est; }
+void Texto::setOriginal(std::string txt)      {std::string  original      = txt; }
+void Texto::setTraduccion(std::string txt)    {std::string traduccion    = txt; }
+void Texto::setPronunciacion(std::string txt) {std::string  pronunciacion = txt; }
+void Texto::setIdioma(int idi)                { idioma        = idi; }
+void Texto::setEstilo(int est)                { estilo        = est; }
 
 // GETTERS
 std::string Texto::getOriginal()        { return original; }
 std::string Texto::getTraduccion()      { return traduccion; }
 std::string Texto::getPronunciacion()   { return pronunciacion; }
-std::string Texto::getIdioma()          { return idioma; }
-std::string Texto::getEstilo()          { return estilo; }
+int Texto::getIdioma()                  { return idioma; }
+int Texto::getEstilo()                  { return estilo; }
 
 // MÉTODOS VACÍOS: FALTAN POR IMPLEMENTAR
-void Texto::traducir() { /*TRADUCIR bla bla bla chingchongching*/ }
-void Texto::traducir(const string&  ori, string idi, string est) { /* falta */ }
+void Texto::traducir() {
+    original = "Método traducir base";
+    std::cout << original;
+ }
+void Texto::traducir(const std::string&  ori, int idi, int est) { 
+    estilo = 2;
+    original = "clase base";
+}

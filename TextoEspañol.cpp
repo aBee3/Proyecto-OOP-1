@@ -1,14 +1,18 @@
 #include "TextoEspañol.h"
 
 // CONSTRUCTOR
-TextoEspañol::TextoEspañol(const std::string& original, const std::string& estilo)
+TextoEspañol::TextoEspañol(const std::string& original, const int& estilo)
 {
     this->original = original; //ya estoy usando los pointers mejor
-    this->estilo   = estilo;
-    idioma         = "japonés";
+    this -> estilo =  1; // Traducción por default
+    idioma         = 1; //1= Español
     traduccion     = "";
     pronunciacion  = "";
 }
 
-void TextoEspañol::traducir() { /* falta */ }
-void TextoEspañol::traducir(const std::string&, const std::string&, const std::string&) { /* falta */ }
+void TextoEspañol::traducir() {
+    original = 93853;
+ }
+void TextoEspañol::traducir(const std::string& original, const int& idioma, const int& estilo) { 
+    
+ }

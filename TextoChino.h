@@ -1,3 +1,4 @@
+
 #ifndef TEXTO_CHINO_H
 #define TEXTO_CHINO_H
 
@@ -7,13 +8,11 @@ class TextoChino : public Texto
 {
 public:
     // CONSTRUCTOR
-    TextoChino(const std::string& original, const std::string& estilo);
+    TextoChino(const std::string& original, const int& estilo);
 
     // OVERRIDE & OVERLOAD
     void traducir() override;
-    void traducir(const std::string& original,
-                  const std::string& idioma,
-                  const std::string& estilo) override; //para la sobre escritura
+    void traducir(const std::string& original, const int& idioma, const int& estilo) override; //para la sobre escritura
 };
 
 #endif
