@@ -9,7 +9,7 @@ using namespace std;
 class Traductor
 {
 private:
-    std::vector<Texto*> textos;            // PUNTERO con 10 objetos texto
+    Texto** textos;            // Doble puntero para manejar la memoria de forma dinámica
     int idioma;
     int cantidad;
     int index;
