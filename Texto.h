@@ -26,9 +26,9 @@ public:
     void setEstilo(int Estilo);
 
     // GETTERS
-    std::string getOriginal()       ;
-    std::string getTraduccion()     ;
-    std::string getPronunciacion()  ;
+    std::string getOriginal() const      ;
+    std::string getTraduccion()          ;
+    std::string getPronunciacion()       ;
     int getIdioma()         ;
     int getEstilo()         ;
 

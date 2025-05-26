@@ -7,7 +7,7 @@ using namespace std;
 Traductor::Traductor(){
     index = 0;
     cantidad = 10;
-    textos.resize(10, nullptr);
+    textos = new Texto*[cantidad];
     idioma   =  1;        
     lectura  = "";
     glosario = "";
@@ -15,20 +15,22 @@ Traductor::Traductor(){
 }
 
 
-Traductor::Traductor(int cant){
-    index = 0;
-    cantidad = cant;
-    textos.resize(cantidad, nullptr); 
-    idioma   =  1;        
-    lectura  = "";
-    glosario = "";
+Traductor::Traductor(int cantidad) : cantidad(cantidad), index(0) {
+    textos = new Texto*[cantidad];
+    for (int i = 0; i < cantidad; i++) {
+        textos[i] = nullptr;
+    }
 }
 
 // DESTRUCTOR
 Traductor::~Traductor() {
-	for (auto texto : textos) {
-            delete texto;
-}}
+    for (int i = 0; i < cantidad; i++) {
+        delete textos[i];  // Free each allocated Texto object
+    }
+    delete[] textos;  // Free the array of pointers
+}
+
+
 
 // SETTERS
 void Traductor:: setCantidad(const int&  cant){
@@ -66,11 +68,20 @@ string Traductor::getLectura(){
 
 
 // MÉTODOS
-void Traductor::addTexto(){
-    textos[index] = new Texto(1); // el uno es porque quiero el método sobreescrito que pide al usuario agregar texto
-    
-    setIndex(index);
+
+// A ver quiero hacer que traductor tenga acceso al constructor de texto, debería primero hacer los textos y luego meterlos en el traductor?
+
+
+void Traductor::addTexto(Texto* nuevoTexto) {
+    if (index < cantidad) {
+        textos[index] = nuevoTexto; // Assign the dynamically created Texto object to the array
+        index++;  // Move to the next slot in the array
+    } else {
+        cout << "No hay espacio para más textos." << endl;
+    }
 }
+
+
 
 void Traductor::armarGlosario(const std::string& traduccion, const std::string& pronunciacion){
     const string& glosario = traduccion + " — " + pronunciacion;
@@ -80,7 +91,23 @@ void Traductor::armarLectura(const std::string& traduccion, const std::string& p
 // MÉTODOS faltantes
 void Traductor::mostrarTraducciones()   const { /* falta */ }
 void Traductor::mostrarPronunciaciones()const { /* falta */ }
-void Traductor::mostrarTextos() const{ }
+
+void Traductor::mostrarTextos() const {
+    cout << "Lista de textos:" << endl;
+    for (int i = 0; i < index; i++) {
+        if (textos[i] != nullptr) {
+            cout << textos[i]->getOriginal() << endl; 
+            cout << textos[0]->getOriginal() << endl; 
+            
+            cout << "Printed the texts, solve it" << endl; 
+            // Get los otros dos pronunciación y traducción
+        }
+        else {
+            cout << "Error: textos[" << i << "] es nullptr." << endl;
+        }
+    }
+}
+
 
 // Exportar lo hecho por el traductor a formato de texto
 void Traductor::exportar()            const { /* falta */ }

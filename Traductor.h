@@ -25,7 +25,7 @@ public:
     ~Traductor();  
 
     // SETTER
-    void addTexto();
+    void addTexto(Texto* nuevoTexto);
     void setCantidad(const int&  ori);
     void setIndex(const int& ind);
     void setLectura(const std::string& lect);

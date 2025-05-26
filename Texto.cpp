@@ -39,7 +39,7 @@ void Texto::setIdioma(int idi)                { idioma        = idi; }
 void Texto::setEstilo(int est)                { estilo        = est; }
 
 // GETTERS
-std::string Texto::getOriginal()        { return original; }
+std::string Texto::getOriginal() const  { return original; }
 std::string Texto::getTraduccion()      { return traduccion; }
 std::string Texto::getPronunciacion()   { return pronunciacion; }
 int Texto::getIdioma()                  { return idioma; }
