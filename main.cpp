@@ -11,8 +11,8 @@
 #include "TextoChino.h"
 #include "Texto.h"
 
-
 int main() {
+    system("chcp 65001");
     std::cout << "Bienvenido al traductor ESPAÑOL - CHINO\n Idiomas:\n Español [1], Chino [2]"<<std::endl;
     int cantidad;
 
@@ -55,6 +55,7 @@ int main() {
     // Mostramos los textos guardados en el Traductor
     cout << "\nTextos guardados en el Traductor:\n";
     traductor.mostrarTextos(); //
+    std::cout<<"你好世界"<<endl;
 
     return 0;
 }
