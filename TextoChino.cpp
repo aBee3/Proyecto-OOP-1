@@ -11,7 +11,7 @@ void TextoChino::traducir() {
 
 }
 void TextoChino::traducir(const std::string&, const int&) {
-        original = "override";
-        estilo = 2;
+        this -> original = "override";
+        this -> estilo = 2;
         std::cout << "Hello, World!";
 }

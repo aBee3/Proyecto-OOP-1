@@ -25,9 +25,9 @@ Traductor::Traductor(int cantidad) : cantidad(cantidad), index(0) {
 // DESTRUCTOR
 Traductor::~Traductor() {
     for (int i = 0; i < cantidad; i++) {
-        delete textos[i];  // Free each allocated Texto object
+        delete textos[i]; 
     }
-    delete[] textos;  // Free the array of pointers
+    delete[] textos; 
 }
 
 
@@ -66,7 +66,6 @@ string Traductor::getLectura(){
     return string(lectura);
 }
 
-
 // MÉTODOS
 
 // A ver quiero hacer que traductor tenga acceso al constructor de texto, debería primero hacer los textos y luego meterlos en el traductor?
@@ -80,7 +79,6 @@ void Traductor::addTexto(Texto* nuevoTexto) {
         cout << "No hay espacio para más textos." << endl;
     }
 }
-
 
 
 void Traductor::armarGlosario(const std::string& traduccion, const std::string& pronunciacion){

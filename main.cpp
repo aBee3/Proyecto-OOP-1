@@ -12,6 +12,10 @@
 
 
 int main() {
+    Texto t(1, "Hola mundo");
+    std::cout << "Texto original: " << t.getOriginal() << std::endl;
+
+/*
     int cantidad;
     cout << "¿Cuántos textos deseas agregar? ";
     cin >> cantidad;
@@ -42,6 +46,8 @@ int main() {
     cout << "\nTextos guardados en el Traductor:\n";
     traductor.mostrarTextos(); //
     std::cout<<"Falta corregir mostrarTextos para que los textos se muestren correctamente. No está funcionando inicializar el traductor"<<endl;
+    */
+
 
     return 0;
 }

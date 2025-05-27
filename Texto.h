@@ -14,12 +14,11 @@ protected:
 public:
     // CONSTRUCTORES
     Texto();
-    Texto(int idioma);
     Texto(int Idi, std::string Ori);
     virtual ~Texto() = default;   // DESTRUCTOR 
 
     // SETTERS
-    void setOriginal(std::string Original);
+    void setOriginal(std::string Ori);
     void setTraduccion(std::string Traduccion);
     void setPronunciacion(std::string Pronunciacion);
     void setIdioma(int Idioma);
