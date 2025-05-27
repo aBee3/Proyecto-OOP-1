@@ -51,13 +51,13 @@ int Texto::getEstilo()                  { return estilo; }
 
 // MÉTODOS VACÍOS: FALTAN POR IMPLEMENTAR
 void Texto::traducir() {
-    original = "Método traducir base";
+    this -> original = "Método traducir base";
     std::cout << original;
  }
 
- 
+
 void Texto::traducir(const std::string&  ori, const int& est) { 
-    estilo = 2;
-    original = "clase base";
+    this -> estilo = 2;
+    this -> original = "clase base";
 }
 

@@ -2,6 +2,7 @@
 // Librerías a utilizar
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
 
 // Headers de las clases
@@ -12,25 +13,34 @@
 
 
 int main() {
-    Texto t(1, "Hola mundo");
-    std::cout << "Texto original: " << t.getOriginal() << std::endl;
-
-/*
+    std::cout << "Bienvenido al traductor ESPAÑOL - CHINO\n Idiomas:\n Español [1], Chino [2]"<<std::endl;
     int cantidad;
+
     cout << "¿Cuántos textos deseas agregar? ";
-    cin >> cantidad;
+    std::cin >> cantidad;
+    std::cin.ignore(); 
+
 
     // Inicializamos el Traductor con la cantidad de textos
-    Traductor traductor(cantidad); // creo que cantidad no inicializa el array de textos correctamente
-    // Este cantidad no funciona
+    Traductor traductor(cantidad); //
 
     for (int i = 0; i < cantidad; i++) {
-        int idioma;
-        string original;
+        int idioma = 0;
+        std::string input;
+        std::string original;
 
-        cout << "Introduce el idioma para el texto " << i + 1 << ": ";
-        cin >> idioma;
-        cin.ignore(); // 
+       while (true) {
+            std::cout << "Introduce el idioma para el texto (1 o 2): ";
+            std::getline(std::cin, input);  
+
+            std::stringstream ss(input);
+            if (ss >> idioma && (idioma == 1 || idioma == 2)) {
+                break; 
+            }
+
+            std::cout << "Entrada inválida. Por favor, escribe 1 o 2.\n";
+        }
+        std::cout << "Idioma seleccionado: " << idioma << std::endl;
 
         cout << "Introduce el texto original: ";
         getline(cin, original);
@@ -45,9 +55,6 @@ int main() {
     // Mostramos los textos guardados en el Traductor
     cout << "\nTextos guardados en el Traductor:\n";
     traductor.mostrarTextos(); //
-    std::cout<<"Falta corregir mostrarTextos para que los textos se muestren correctamente. No está funcionando inicializar el traductor"<<endl;
-    */
-
 
     return 0;
 }

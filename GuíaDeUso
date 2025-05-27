@@ -3,3 +3,5 @@ g++ *.cpp -o a
 
 Luego Corre el código con 
 .\a.exe
+
+Si se traba todo: Ctrl + C para salir del código

@@ -73,8 +73,8 @@ string Traductor::getLectura(){
 
 void Traductor::addTexto(Texto* nuevoTexto) {
     if (index < cantidad) {
-        textos[index] = nuevoTexto; // Assign the dynamically created Texto object to the array
-        index++;  // Move to the next slot in the array
+        textos[index] = nuevoTexto; // Pongo el  nuevo texto en la lista de textos
+        this-> index++;  // Movemos el índice
     } else {
         cout << "No hay espacio para más textos." << endl;
     }
@@ -92,13 +92,9 @@ void Traductor::mostrarPronunciaciones()const { /* falta */ }
 
 void Traductor::mostrarTextos() const {
     cout << "Lista de textos:" << endl;
-    for (int i = 0; i < index; i++) {
+    for (int i = 0; i < cantidad; i++) {
         if (textos[i] != nullptr) {
-            cout << textos[i]->getOriginal() << endl; 
-            cout << textos[0]->getOriginal() << endl; 
-            
-            cout << "Printed the texts, solve it" << endl; 
-            // Get los otros dos pronunciación y traducción
+            cout << i+1 <<".  "<< textos[i]->getOriginal() << endl; 
         }
         else {
             cout << "Error: textos[" << i << "] es nullptr." << endl;
