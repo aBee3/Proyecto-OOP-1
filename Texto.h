@@ -32,8 +32,8 @@ public:
     int getEstilo()         ;
 
     // MÉTODOS (sobrecarga + sobrescritura)
-    virtual void traducir();
-    virtual void traducir(const std::string& original, const int& estilo);
+    virtual void traducir() = 0;
+    virtual void traducir(const std::string& original, const int& estilo) = 0; //creo que este terminaré borrándolo
 };
 
 #endif

@@ -2,6 +2,9 @@
 #include "Texto.h"
 #include <vector>
 
+// Diccionario con palabras falsas
+
+
 // CONSTRUCTOR (vacío)
 Texto::Texto()
     : original(""), traduccion(""), pronunciacion(""), estilo(1), idioma(0){}
@@ -49,13 +52,12 @@ std::string Texto::getPronunciacion()   { return pronunciacion; }
 int Texto::getIdioma()                  { return idioma; }
 int Texto::getEstilo()                  { return estilo; }
 
-// MÉTODOS VACÍOS: FALTAN POR IMPLEMENTAR
+// Métodos para polimorfismo
 void Texto::traducir() {
-    this -> original = "Método traducir base";
-    std::cout << original;
+    
  }
 
-
+// Voy a tener que borrar estilo
 void Texto::traducir(const std::string&  ori, const int& est) { 
     this -> estilo = 2;
     this -> original = "clase base";
