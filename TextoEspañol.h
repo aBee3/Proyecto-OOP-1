@@ -7,11 +7,13 @@ class TextoEspañol : public Texto
 {
 public:
     // CONSTRUCTOR
-    TextoEspañol(const std::string& original, const int& estilo);
+
+    //TextoEspañol();
+    TextoEspañol(const std::string& original); 
 
     // OVERRIDE & OVERLOAD
     void traducir();
-    void traducir(const std::string& original, const int& idioma, const int& estilo);
+    //void traducir(const std::string& original);
 };
 
 #endif

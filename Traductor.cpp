@@ -1,4 +1,6 @@
 #include "Traductor.h"
+#include "TextoChino.h"
+#include "TextoEspañol.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -6,7 +8,7 @@ using namespace std;
 // CONSTRUCTOR
 Traductor::Traductor(){
     index = 0;
-    cantidad = 10;
+    cantidad = 1;
     textos = new Texto*[cantidad];
     idioma   =  1;        
     lectura  = "";
@@ -16,6 +18,11 @@ Traductor::Traductor(){
 
 
 Traductor::Traductor(int cantidad) : cantidad(cantidad), index(0) {
+
+    if (cantidad <= 0) {
+        throw std::invalid_argument("MAL LO HICISTE HWOIFWEG");
+    }
+
     textos = new Texto*[cantidad];
     for (int i = 0; i < cantidad; i++) {
         textos[i] = nullptr;
@@ -106,8 +113,14 @@ void Traductor::mostrarTextos() const {
 // Exportar lo hecho por el traductor a formato de texto
 void Traductor::exportar()            const { /* falta */ }
 
-// Método para crear ejemplos de traductores
+// Método para crear ejemplos de traductores 
+
+
+/* Ahorita te arreglo, no me des lata
 void Traductor::ejemplo()             const {
-    Texto textoEnEspañol(1, "Después del trabajo me gusta jugar fútbol.");
-    Texto textoEnChino(2, "下班后我喜欢踢足球。"); // Pronunciación : xiàbānhòu wǒxǐhuān tīzúqiú
+    TextoEspañol textoEnEspañol("Después del trabajo me gusta jugar fútbol.");
+    TextoChino textoEnChino("下班后我喜欢踢足球。"); // Pronunciación : xiàbānhòu wǒxǐhuān tīzúqiú
 }
+
+
+*/

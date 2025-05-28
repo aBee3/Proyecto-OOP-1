@@ -8,11 +8,12 @@ class TextoChino : public Texto
 {
 public:
     // CONSTRUCTOR
-    TextoChino(const std::string& original, const int& estilo);
+    //TextoChino(); // lo borré pero veamos qué sucede
+    TextoChino(const std::string& original);
 
     // OVERRIDE & OVERLOAD
-    void traducir() override;
-    void traducir(const std::string& ori, const int& est) override; //para la sobre escritura
+    void traducir();
+    //void traducir(const std::string& original); //para la sobre escritura
 };
 
 #endif

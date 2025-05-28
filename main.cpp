@@ -13,12 +13,13 @@
 
 int main() {
     system("chcp 65001");
-    std::cout << "Bienvenido al traductor ESPAÑOL - CHINO\n Idiomas:\n Español [1], Chino [2]"<<std::endl;
+    std::cout << "Bienvenido al traductor ESPAÑOL - CHINO\n Idiomas:"<<std::endl;
     int cantidad;
 
     cout << "¿Cuántos textos deseas agregar? ";
     std::cin >> cantidad;
     std::cin.ignore(); 
+
 
 
     // Inicializamos el Traductor con la cantidad de textos
@@ -30,7 +31,7 @@ int main() {
         std::string original;
 
        while (true) {
-            std::cout << "Introduce el idioma para el texto (1 o 2): ";
+            std::cout << "Introduce el idioma para el texto\n Español [1], Chino [2]: ";
             std::getline(std::cin, input);  
 
             std::stringstream ss(input);
@@ -45,16 +46,33 @@ int main() {
         cout << "Introduce el texto original: ";
         getline(cin, original);
 
-        // Creamos un nuevo Texto con idioma y original
-        Texto* nuevoTexto = new Texto(idioma, original);
+        // Creamos un nuevo texto Default
 
-        // Lo añadimos al traductor
+        std::cout << "Creando texto...\n"; // DEBUGGER :P
+        Texto* nuevoTexto;
+         std::cout<< "Texto creado"<< std:: endl;
+
+        //Ahora dependiendo del idioma creamos objetos de tipo individual
+        if (idioma == 1) {
+            // Español: se traduce al chino
+            std::cout<<"Creando texto en español..." << std:: endl;
+            nuevoTexto = new TextoEspañol(original);
+            std::cout<<"Texto en Español creado";
+        } 
+        else {
+            // Chino: se traduce al español
+            std::cout<<"Creando texto en Chino..."<< std:: endl;
+            nuevoTexto = new TextoChino(original);
+            std::cout<<"Creando texto en Chino..."<< std:: endl;
+        }
+
         traductor.addTexto(nuevoTexto);
     }
 
     // Mostramos los textos guardados en el Traductor
     cout << "\nTextos guardados en el Traductor:\n";
-    traductor.mostrarTextos(); //
+    traductor.mostrarTextos(); 
+
     std::cout<<"你好世界"<<endl;
 
     return 0;
