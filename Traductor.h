@@ -39,8 +39,7 @@ public:
 
     // MÉTODOS
     void traducir();
-    void armarGlosario(const std::string& trad,
-                       const std::string& pron);
+    void armarGlosario();
     void armarLectura(const std::string& trad,
                       const std::string& pron);
 

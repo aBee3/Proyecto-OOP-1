@@ -85,11 +85,21 @@ void Traductor::traducir(){
     for (int i = 0; i < cantidad; i++) {
         textos[i] -> traducir();
     }
-    std::cout <<"Traducido :D"<< std::endl;
+    std::cout <<"LISTO"<< std::endl;
 }
 
-void Traductor::armarGlosario(const std::string& traduccion, const std::string& pronunciacion){
-    const string& glosario = traduccion + " — " + pronunciacion;
+void Traductor::armarGlosario(){
+    for (int i = 0; i < cantidad; i++) {
+        std::cout << i +1 << std::endl;
+        
+        std::cout << "ORIGINAL     TRADUCCIÓN   PRONUNCIACIÓN" << std::endl;
+
+        std::string original = textos[i] -> getOriginal();
+        std::string traduccion = textos[i] -> getTraduccion();
+        std::string pronunciacion = textos[i] -> getPronunciacion();
+        const string& glosario = original + " -> " + traduccion + " — " + pronunciacion;
+    }
+    
 }
 void Traductor::armarLectura(const std::string& traduccion, const std::string& pronunciacion){}
 

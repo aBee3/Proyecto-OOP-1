@@ -71,6 +71,9 @@ int main() {
     traductor.mostrarTextos(); 
     traductor.traducir();
     traductor.mostrarTraducciones();
+    traductor.armarGlosario();
+    // Esto queda por arreglarse, se verá después
+    std::cout<< traductor.getGlosario()<<std::endl;
     std::cout<<"你好世界"<<endl;
 
     //changed this
