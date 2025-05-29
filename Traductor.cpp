@@ -80,6 +80,13 @@ void Traductor::addTexto(Texto* nuevoTexto) {
     }
 }
 
+void Traductor::traducir(){
+    std::cout << "Traduciendo... "<<std::endl;
+    for (int i = 0; i < cantidad; i++) {
+        textos[i] -> traducir();
+    }
+    std::cout <<"Traducido :D"<< std::endl;
+}
 
 void Traductor::armarGlosario(const std::string& traduccion, const std::string& pronunciacion){
     const string& glosario = traduccion + " — " + pronunciacion;
@@ -87,7 +94,17 @@ void Traductor::armarGlosario(const std::string& traduccion, const std::string& 
 void Traductor::armarLectura(const std::string& traduccion, const std::string& pronunciacion){}
 
 // MÉTODOS faltantes
-void Traductor::mostrarTraducciones()   const { /* falta */ }
+void Traductor::mostrarTraducciones()   const {
+    std::cout << "Traducciones: "<<std::endl;
+    for (int i = 0; i < cantidad; i++) {
+        std::cout << i +1 << std::endl;
+        std::string original = textos[i] -> getOriginal();
+        std::cout << "Original: "<< original << std::endl;
+        std::string traduccion = textos[i] -> getTraduccion();
+        std::cout << "Traducción: "<< traduccion << std::endl;
+    }
+    std::cout <<"Proceso terminado"<< std::endl;
+}
 void Traductor::mostrarPronunciaciones()const { /* falta */ }
 
 void Traductor::mostrarTextos() const {

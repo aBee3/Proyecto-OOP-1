@@ -12,6 +12,8 @@
 #include "Texto.h"
 
 int main() {
+
+    // Función manipulable con el usuario
     system("chcp 65001");
     std::cout << "Bienvenido al traductor ESPAÑOL - CHINO\n Idiomas:"<<std::endl;
     int cantidad;
@@ -19,8 +21,6 @@ int main() {
     cout << "¿Cuántos textos deseas agregar? ";
     std::cin >> cantidad;
     std::cin.ignore(); 
-
-
 
     // Inicializamos el Traductor con la cantidad de textos
     Traductor traductor(cantidad); //
@@ -47,23 +47,20 @@ int main() {
         getline(cin, original);
 
         // Creamos un nuevo texto Default
-
-        std::cout << "Creando texto...\n"; // DEBUGGER :P
         Texto* nuevoTexto;
-         std::cout<< "Texto creado"<< std:: endl;
 
         //Ahora dependiendo del idioma creamos objetos de tipo individual
         if (idioma == 1) {
             // Español: se traduce al chino
             std::cout<<"Creando texto en español..." << std:: endl;
             nuevoTexto = new TextoEspañol(original);
-            std::cout<<"Texto en Español creado";
+            std::cout<<"Texto en Español creado\n\n";
         } 
         else {
             // Chino: se traduce al español
             std::cout<<"Creando texto en Chino..."<< std:: endl;
             nuevoTexto = new TextoChino(original);
-            std::cout<<"Creando texto en Chino..."<< std:: endl;
+            std::cout<<"Texto en chino creado\n\n"<< std:: endl;
         }
 
         traductor.addTexto(nuevoTexto);
@@ -72,7 +69,8 @@ int main() {
     // Mostramos los textos guardados en el Traductor
     cout << "\nTextos guardados en el Traductor:\n";
     traductor.mostrarTextos(); 
-
+    traductor.traducir();
+    traductor.mostrarTraducciones();
     std::cout<<"你好世界"<<endl;
 
     //changed this

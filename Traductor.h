@@ -38,6 +38,7 @@ public:
     std::string getLectura();
 
     // MÉTODOS
+    void traducir();
     void armarGlosario(const std::string& trad,
                        const std::string& pron);
     void armarLectura(const std::string& trad,

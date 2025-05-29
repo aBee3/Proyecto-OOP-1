@@ -10,8 +10,8 @@ TextoChino::TextoChino() : Texto(2, "") {} // Default
 TextoChino::TextoChino(const std::string& ori) : Texto(2, ori) {}
 
 // Método
-void TextoChino::traducir()
-{
+void TextoChino::traducir(){
+    std::cout << "Traduciendo ..." << std:: endl;
     std::ifstream file("diccionario.txt");
     if (!file.is_open())
     {
