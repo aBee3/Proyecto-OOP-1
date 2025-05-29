@@ -37,3 +37,4 @@ void Texto::traducir() {
     std::cout<<"Método PADRE de traducción"<< std::endl;
  }
 
+//changed something right here
