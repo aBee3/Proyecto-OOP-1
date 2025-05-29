@@ -2,29 +2,13 @@
 #include "Texto.h"
 #include <vector>
 
-// Diccionario con palabras falsas
+// CONSTRUCTOR (default)
+Texto::Texto(): original(""), traduccion(""), pronunciacion(""), idioma(0){}
 
+Texto::Texto(int Idi, const std::string Ori)
+    : idioma(Idi), original(Ori), traduccion(""), pronunciacion("") {}
 
-// CONSTRUCTOR (vacío)
-Texto::Texto()
-    : original(""), traduccion(""), pronunciacion(""), estilo(1), idioma(0){}
-
-/* Dudo usar esta parte, como es un puntero o uso this o uso la inicialización de arriba :)
-// Aquí le voy a poner un int sólo para diferenciar que este inicializa todo.
-Texto::Texto(int idioma){
-    int ans = 0;
-    std::vector<std::string> idiomas = {"Español", "Chino"};
-    std::cout << "Ingrese el idioma de origen \n     0 = Español\n     1 = Chino\n\n";
-    std::cin >> idioma; // Guardamos el idioma de origen
-    std::cout << "Ingresa tu texto en " << idiomas[idioma] <<"\n"<< std::endl;
-    std::cin >> original; // Guardamos el texto original
-    std::cout << "LISTO"<< std::endl;
-*/
-
-Texto::Texto(int Idi, std::string Ori)
-    : idioma(Idi), original(Ori), traduccion(""), pronunciacion(""), estilo(1) {}
-
-// SETTERS
+// SETTERS -------------
 void Texto::setOriginal(std::string Ori) {
     this->original = Ori;
 }
@@ -41,25 +25,15 @@ void Texto::setIdioma(int idi) {
     this->idioma = idi;
 }
 
-void Texto::setEstilo(int est) {
-    this->estilo = est;
-}
-
 // GETTERS
-std::string Texto::getOriginal() const  { return original; }
-std::string Texto::getTraduccion()      { return traduccion; }
-std::string Texto::getPronunciacion()   { return pronunciacion; }
-int Texto::getIdioma()                  { return idioma; }
-int Texto::getEstilo()                  { return estilo; }
+std::string Texto::getOriginal()        const { return original; }
+std::string Texto::getTraduccion()      const { return traduccion; }
+std::string Texto::getPronunciacion()   const { return pronunciacion; }
+int Texto::getIdioma()                  const { return idioma; }
+
 
 // Métodos para polimorfismo
 void Texto::traducir() {
-    
+    std::cout<<"Método PADRE de traducción"<< std::endl;
  }
-
-// Voy a tener que borrar estilo
-void Texto::traducir(const std::string&  ori, const int& est) { 
-    this -> estilo = 2;
-    this -> original = "clase base";
-}
 

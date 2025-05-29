@@ -108,6 +108,5 @@ void Traductor::exportar()            const { /* falta */ }
 
 // Método para crear ejemplos de traductores
 void Traductor::ejemplo()             const {
-    Texto textoEnEspañol(1, "Después del trabajo me gusta jugar fútbol.");
-    Texto textoEnChino(2, "下班后我喜欢踢足球。"); // Pronunciación : xiàbānhòu wǒxǐhuān tīzúqiú
+    
 }
