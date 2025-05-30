@@ -11,11 +11,12 @@
 #include "TextoChino.h"
 #include "Texto.h"
 
+
 int main() {
 
     // Función manipulable con el usuario
     system("chcp 65001");
-    std::cout << "Bienvenido al traductor ESPAÑOL - CHINO\n Idiomas:"<<std::endl;
+    std::cout << "\n\n----------------------------------------------\nBienvenido al traductor ESPAÑOL - CHINO\n\nPor favor lee la GuiaDeUso antes de empezar.\n\n"<<std::endl;
     int cantidad;
 
     cout << "¿Cuántos textos deseas agregar? ";
@@ -31,9 +32,11 @@ int main() {
         std::string original;
 
        while (true) {
-            std::cout << "Introduce el idioma para el texto\n Español [1], Chino [2]: ";
+            std::cout << "Introduce el idioma para el texto: \n     Español [1], Chino [2]: ";
             std::getline(std::cin, input);  
 
+            // Esto lo puse con stringstream para que reconozca incluso las letras y así pueda checar
+            // si es el int 1 o 2 que necesito.
             std::stringstream ss(input);
             if (ss >> idioma && (idioma == 1 || idioma == 2)) {
                 break; 
@@ -41,9 +44,9 @@ int main() {
 
             std::cout << "Entrada inválida. Por favor, escribe 1 o 2.\n";
         }
-        std::cout << "Idioma seleccionado: " << idioma << std::endl;
+        std::cout << "Idioma seleccionado: \n         " << idioma << std::endl;
 
-        cout << "Introduce el texto original: ";
+        cout << "Introduce el texto original:\n     --> ";
         getline(cin, original);
 
         // Creamos un nuevo texto Default
@@ -52,13 +55,12 @@ int main() {
         //Ahora dependiendo del idioma creamos objetos de tipo individual
         if (idioma == 1) {
             // Español: se traduce al chino
-            std::cout<<"Creando texto en español..." << std:: endl;
+            
             nuevoTexto = new TextoEspañol(original);
-            std::cout<<"Texto en Español creado\n\n";
+            std::cout<<"\nTexto en Español creado\n\n";
         } 
         else {
             // Chino: se traduce al español
-            std::cout<<"Creando texto en Chino..."<< std:: endl;
             nuevoTexto = new TextoChino(original);
             std::cout<<"Texto en chino creado\n\n"<< std:: endl;
         }
@@ -67,7 +69,6 @@ int main() {
     }
 
     // Mostramos los textos guardados en el Traductor
-    cout << "\nTextos guardados en el Traductor:\n";
     traductor.mostrarTextos(); 
     traductor.traducir();
     traductor.mostrarTraducciones();
