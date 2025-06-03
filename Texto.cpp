@@ -2,13 +2,19 @@
 #include "Texto.h"
 #include <vector>
 
-// CONSTRUCTOR (default)
-Texto::Texto(): original(""), traduccion(""), pronunciacion(""), idioma(0){}
+// ====================================================
+//                  CONSTRUCTOR (default)
+// ====================================================
+
+Texto::Texto(): original(""), traduccion(""), pronunciacion(""), idioma(0){};
 
 Texto::Texto(int Idi, const std::string Ori)
-    : idioma(Idi), original(Ori), traduccion(""), pronunciacion("") {}
+    : idioma(Idi), original(Ori), traduccion(""), pronunciacion("") {};
 
-// SETTERS -------------
+
+// ====================================================
+//                      SETTERS 
+// ====================================================
 void Texto::setOriginal(std::string Ori) {
     this->original = Ori;
 }
@@ -25,16 +31,26 @@ void Texto::setIdioma(int idi) {
     this->idioma = idi;
 }
 
-// GETTERS
+// ====================================================
+//                         GETTERS
+// ====================================================
+
 std::string Texto::getOriginal()        const { return original; }
 std::string Texto::getTraduccion()      const { return traduccion; }
 std::string Texto::getPronunciacion()   const { return pronunciacion; }
 int Texto::getIdioma()                  const { return idioma; }
 
 
-// Métodos para polimorfismo
-void Texto::traducir() {
-    std::cout<<"Método PADRE de traducción"<< std::endl;
- }
+// ====================================================
+//                         METODOS
+// ====================================================
+std::string minusculas(std::string texto) {
+    for (char& c : texto) {
+        if (c >= 'A' && c <= 'Z') {
+            c += ('a' - 'A'); 
+        }
+    }
+    return texto;
+}
 
-//changed something right here
+// No defino Traducir() porque es virtual
