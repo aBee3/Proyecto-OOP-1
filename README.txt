@@ -23,3 +23,28 @@ Casos de Fallo
 Los casos en los que el programa fallará es si se inserta una frase en cualquier otro idioma o si no se especifica adecuadamente el idioma en el que la frase está (español, chino), si se inserta una frase en inglés, el programa fallará.
 1. No funcionará si el texto no está en chino.
 2. No funcionará si te equivocas al agregar un texto.
+
+**Guía de Uso**
+
+FAVOR DE LEER ANTES DE CORRER
+Primero compila todo usando:
+g++ *.cpp -o a
+
+Luego Corre el código con 
+.\a.exe
+
+Ctrl + C para salir del código.
+
+Ejemplo de pasos a seguir:
+1. Te preguntará el número de textos, elige el que quieras, recomiendo máximo 3 para evitar errores
+2. Ingresa 1 para español (recomendado), pues tendrías que meter la palabra en chino para probar textos en chino.
+3. Ingresa la palabra en minúsculas: 
+    EJEMPLO: perro, gato, hola
+4. Disfruta de la traducción
+
+Notas de mejora:
+1. Cambiar el loop para agregar o modificar palabras.
+2. Hacer que el proceso no termine
+3. Ser capaz de combinar palabras para hacer frases (pendiente).
+4. Exportar
+5. Hacer lectura.

@@ -29,6 +29,7 @@ class Texto{
         int getIdioma()                  const      ;
 
     // MÉTODOS (sobrecarga + sobrescritura)
+    // Texto es una clase abstracta
     virtual void traducir() = 0;
     
 };

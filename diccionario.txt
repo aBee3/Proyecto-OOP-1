@@ -97,3 +97,23 @@ vivir 生活 shēnghuó
 morir 死 sǐ
 nacer 出生 chūshēng
 llamar 叫 jiào
+
+
+
+Yo 我 wǒ
+Tu 你 nǐ
+el 他 nǐ
+ella 她	tā
+Nosotros 我们	wǒmen
+Vosotros 你们	nǐmen
+Ellos 他们 tāmen
+Ellas 她们 tāmen
+Amar 喜欢 xǐhuān
+Gustar 喜欢 xǐhuān
+Comer 吃 chī
+Beber 喝 hē
+Tener 有 yǒu
+Querer 想 xiǎng
+Ir 去 qù
+Bueno 好 hǎo
+Malo 坏	huài
