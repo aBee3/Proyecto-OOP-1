@@ -6,12 +6,14 @@
 
 
 // Constructor 
-TextoChino::TextoChino() : Texto(2, "") {} // Default
+TextoChino::TextoChino() : Texto(2, "") {
+    std::cout<<"Construyendo texto en Chino..."<< std:: endl;
+} // Default
 TextoChino::TextoChino(const std::string& ori) : Texto(2, ori) {}
 
 // Método
 void TextoChino::traducir(){
-    std::cout << "Traduciendo ..." << std:: endl;
+    std::cout << "     Traduciendo texto en Chino..." << std:: endl;
     std::ifstream file("diccionario.txt");
     if (!file.is_open())
     {

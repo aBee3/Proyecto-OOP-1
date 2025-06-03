@@ -59,6 +59,7 @@ int Traductor::getIndex(){
 }
 
 string Traductor::getGlosario(){
+    
     return string(glosario);
 }
 
@@ -81,21 +82,31 @@ void Traductor::addTexto(Texto* nuevoTexto) {
 }
 
 void Traductor::traducir(){
-    std::cout << "Traduciendo... "<<std::endl;
+    std::cout << "Traduciendo..."<<std::endl;
     for (int i = 0; i < cantidad; i++) {
         textos[i] -> traducir();
     }
-    std::cout <<"Traducido :D"<< std::endl;
+    std::cout <<"\nLISTO\n"<< std::endl;
 }
 
-void Traductor::armarGlosario(const std::string& traduccion, const std::string& pronunciacion){
-    const string& glosario = traduccion + " — " + pronunciacion;
+void Traductor::armarGlosario(){
+    std::cout<<"----------------------------------------------\n Glosario: \n----------------------------------------------"<<std::endl;
+    std::cout << "ORIGINAL     TRADUCCIÓN   PRONUNCIACIÓN" << std::endl;
+    for (int i = 0; i < cantidad; i++) {
+        std::cout << i +1 << std::endl;
+        std::string original = textos[i] -> getOriginal();
+        std::string traduccion = textos[i] -> getTraduccion();
+        std::string pronunciacion = textos[i] -> getPronunciacion();
+        const string& glosario = original + " -> " + traduccion + " — " + pronunciacion;
+        std::cout<<glosario<<std::endl;
+    }
+    
 }
 void Traductor::armarLectura(const std::string& traduccion, const std::string& pronunciacion){}
 
 // MÉTODOS faltantes
 void Traductor::mostrarTraducciones()   const {
-    std::cout << "Traducciones: "<<std::endl;
+    std::cout << "----------------------------------------------\nTraducciones: \n----------------------------------------------"<<std::endl;
     for (int i = 0; i < cantidad; i++) {
         std::cout << i +1 << std::endl;
         std::string original = textos[i] -> getOriginal();
@@ -103,7 +114,7 @@ void Traductor::mostrarTraducciones()   const {
         std::string traduccion = textos[i] -> getTraduccion();
         std::cout << "Traducción: "<< traduccion << std::endl;
     }
-    std::cout <<"Proceso terminado"<< std::endl;
+    std::cout <<"----------------------------------------------\n"<< std::endl;
 }
 void Traductor::mostrarPronunciaciones()const { /* falta */ }
 

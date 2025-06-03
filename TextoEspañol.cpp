@@ -6,10 +6,13 @@
 #include <sstream>
 
 // CONSTRUCTOR
-TextoEspañol::TextoEspañol() : Texto(1, "") {}
+TextoEspañol::TextoEspañol() : Texto(1, "") {
+    std::cout<<"Construyendo texto en español..." << std:: endl;
+}
 
 // Traducir de Español a Chino
 void TextoEspañol::traducir(){
+    std::cout<<"     Traduciendo texto en español..." << std:: endl;
     std::ifstream file("diccionario.txt"); // abre el diccionario y lo lee
     if (!file.is_open())
     {
