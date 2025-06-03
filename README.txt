@@ -1,4 +1,3 @@
----
 
 # Creador de Glosario en Chino del Español
 
