@@ -15,6 +15,7 @@ día 天 tiān
 noche 夜 yè
 mañana 早上 zǎoshang
 tarde 下午 xiàwǔ
+amar 爱 ài
 amor 爱 ài
 mujer 女人 nǚrén
 hombre 男人 nánrén
@@ -100,20 +101,19 @@ llamar 叫 jiào
 
 
 
-Yo 我 wǒ
-Tu 你 nǐ
+yo 我 wǒ
+tu 你 nǐ
 el 他 nǐ
 ella 她	tā
-Nosotros 我们	wǒmen
-Vosotros 你们	nǐmen
-Ellos 他们 tāmen
-Ellas 她们 tāmen
-Amar 喜欢 xǐhuān
-Gustar 喜欢 xǐhuān
-Comer 吃 chī
-Beber 喝 hē
-Tener 有 yǒu
-Querer 想 xiǎng
-Ir 去 qù
-Bueno 好 hǎo
-Malo 坏	huài
+nosotros 我们	wǒmen
+vosotros 你们	nǐmen
+ellos 他们 tāmen
+ellas 她们 tāmen
+gustar 喜欢 xǐhuān
+comer 吃 chī
+beber 喝 hē
+tener 有 yǒu
+querer 想 xiǎng
+ir 去 qù
+bueno 好 hǎo
+malo 坏	huài

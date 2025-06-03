@@ -25,12 +25,15 @@ void TextoChino::traducir(){
     std::string esp, zh, pin;
     bool found = false;
 
+    // Texto chino no se pasa a minúsculas
+
     while (file >> esp >> zh >> pin)
     {
-        if (original == zh)               // buscamos por chino
+        if (original == zh)               // buscamos por (la pronunciaciòn) en chino
         {
             traduccion    = esp;          // Polimorfismo: Chino a Español
             pronunciacion = pin;          // pinyin
+            original      = zh;           // Ahora puedes buscar con el pinyin 
             found = true;
             break;
         }

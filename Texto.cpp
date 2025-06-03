@@ -41,16 +41,5 @@ std::string Texto::getPronunciacion()   const { return pronunciacion; }
 int Texto::getIdioma()                  const { return idioma; }
 
 
-// ====================================================
-//                         METODOS
-// ====================================================
-std::string minusculas(std::string texto) {
-    for (char& c : texto) {
-        if (c >= 'A' && c <= 'Z') {
-            c += ('a' - 'A'); 
-        }
-    }
-    return texto;
-}
 
 // No defino Traducir() porque es virtual

@@ -16,10 +16,10 @@ int main() {
 
     // Función manipulable con el usuario
     system("chcp 65001");
-    std::cout << "\n\n----------------------------------------------\nBienvenido al traductor ESPAÑOL - CHINO\n\nPor favor lee la GuiaDeUso antes de empezar.\n\n"<<std::endl;
+    std::cout << "\n\n----------------------------------------------\nBienvenido al traductor ESPAÑOL - CHINO\n\n"<<std::endl;
     int cantidad;
 
-    cout << "¿Cuántos textos deseas agregar? ";
+    cout << "¿Cuántos textos deseas agregar? \n\n     -->  ";
     std::cin >> cantidad;
     std::cin.ignore(); 
 
@@ -32,7 +32,8 @@ int main() {
         std::string original;
 
        while (true) {
-            std::cout << "Introduce el idioma para el texto: \n     Español [1], Chino [2]: ";
+            std::cout << "---------------------------------------------"<<std::endl;
+            std::cout << "Introduce el idioma para el texto: \n     Español [1], Chino [2]\n\n     -->  ";
             std::getline(std::cin, input);  
 
             // Esto lo puse con stringstream para que reconozca incluso las letras y así pueda checar
@@ -44,7 +45,8 @@ int main() {
 
             std::cout << "Entrada inválida. Por favor, escribe 1 o 2.\n";
         }
-        std::cout << "Idioma seleccionado: \n         " << idioma << std::endl;
+        std::string idiomas[] = {"Español", "Chino"};
+        std::cout << "Idioma seleccionado: \n         " << idiomas[idioma-1] << std::endl;
 
         cout << "Introduce el texto original:\n     --> ";
         getline(cin, original);
@@ -62,7 +64,7 @@ int main() {
         else {
             // Chino: se traduce al español
             nuevoTexto = new TextoChino(original);
-            std::cout<<"Texto en chino creado\n\n"<< std:: endl;
+            std::cout<<"\nTexto en chino creado\n\n"<< std:: endl;
         }
 
         traductor.addTexto(nuevoTexto);
@@ -70,6 +72,7 @@ int main() {
 
     // Mostramos los textos guardados en el Traductor
     traductor.mostrarTextos(); 
+    std::cout<< "\n"<<std::endl;
     traductor.traducir();
     traductor.mostrarTraducciones();
     traductor.armarGlosario();

@@ -69,9 +69,6 @@ string Traductor::getLectura(){
 
 // MÉTODOS
 
-// A ver quiero hacer que traductor tenga acceso al constructor de texto, debería primero hacer los textos y luego meterlos en el traductor?
-
-
 void Traductor::addTexto(Texto* nuevoTexto) {
     if (index < cantidad) {
         textos[index] = nuevoTexto; // Pongo el  nuevo texto en la lista de textos
@@ -81,6 +78,8 @@ void Traductor::addTexto(Texto* nuevoTexto) {
     }
 }
 
+
+
 void Traductor::traducir(){
     std::cout << "Traduciendo..."<<std::endl;
     for (int i = 0; i < cantidad; i++) {
@@ -89,22 +88,68 @@ void Traductor::traducir(){
     std::cout <<"\nLISTO\n"<< std::endl;
 }
 
-void Traductor::armarGlosario(){
-    std::cout<<"----------------------------------------------\n Glosario: \n----------------------------------------------"<<std::endl;
-    std::cout << "ORIGINAL     TRADUCCIÓN   PRONUNCIACIÓN" << std::endl;
-    for (int i = 0; i < cantidad; i++) {
-        std::cout << i +1 << std::endl;
-        std::string original = textos[i] -> getOriginal();
-        std::string traduccion = textos[i] -> getTraduccion();
-        std::string pronunciacion = textos[i] -> getPronunciacion();
-        const string& glosario = original + " -> " + traduccion + " — " + pronunciacion;
-        std::cout<<glosario<<std::endl;
+void Traductor::armarGlosario()
+{
+    std::cout << "----------------------------------------------\n"
+                 " Glosario:\n"
+                 "----------------------------------------------" << std::endl;
+    std::cout << "ORIGINAL  -   TRADUCCIÓN -  PRONUNCIACIÓN\n";
+
+    for (int i = 0; i < cantidad; ++i)
+    {
+        std::cout << i + 1 << std::endl;
+
+        std::string original      = textos[i]->getOriginal();
+        std::string traduccion    = textos[i]->getTraduccion();
+        std::string pronunciacion = textos[i]->getPronunciacion();
+
+        // Indices para dividir la frase en palabras
+        int o = 0, t = 0, p = 0;
+        int lenO = original.length();
+        int lenT = traduccion.length();
+        int lenP = pronunciacion.length();
+
+        while (o < lenO || t < lenT || p < lenP)
+        {
+            // palabra original
+            std::string palabraO = "";
+            while (o < lenO && original[o] != ' ')
+            {
+                palabraO += original[o];
+                o++;
+            }
+            o++;
+
+            // palabra traducción
+            std::string palabraT = "";
+            while (t < lenT && traduccion[t] != ' ')
+            {
+                palabraT += traduccion[t];
+                t++;
+            }
+            t++;
+
+            // palabra pronunciación
+            std::string palabraP = "";
+            while (p < lenP && pronunciacion[p] != ' ')
+            {
+                palabraP += pronunciacion[p];
+                p++;
+            }
+            p++;
+
+            // mostrar el resultadol
+            std::cout << palabraO << " -> " << palabraT << " — " << palabraP << std::endl;
+        }
+
+        std::cout << "----------------------------------------------\n";
     }
-    
 }
+
+
 void Traductor::armarLectura(const std::string& traduccion, const std::string& pronunciacion){}
 
-// MÉTODOS faltantes
+// MÉTODOS
 void Traductor::mostrarTraducciones()   const {
     std::cout << "----------------------------------------------\nTraducciones: \n----------------------------------------------"<<std::endl;
     for (int i = 0; i < cantidad; i++) {
@@ -113,6 +158,8 @@ void Traductor::mostrarTraducciones()   const {
         std::cout << "Original: "<< original << std::endl;
         std::string traduccion = textos[i] -> getTraduccion();
         std::cout << "Traducción: "<< traduccion << std::endl;
+        std::string pronunciacion = textos[i] -> getPronunciacion();
+        std::cout << "Pronunciación: "<< pronunciacion << std::endl;
     }
     std::cout <<"----------------------------------------------\n"<< std::endl;
 }

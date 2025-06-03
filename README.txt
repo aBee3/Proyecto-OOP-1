@@ -1,50 +1,193 @@
-Creador de Glosario en Chino del español.
-El objetivo del programa es, primero traducir una frase del chino al español, luego armar una lectura con 3 frases distintas: la frase original en chino / español, la pronunciación y la traducción, además de un glosario con las palabras más usadas.
 
-Clases
-Texto: El texto tiene el método "traducir" que recibe el idioma de origen, de destino y el "estilo" que indica si buscas obtener la traducción o la pronunciación. Luego esto lo guarda como "traducción", "pronunciación". Los métodos incluyen un constructor con el idioma de origen los getters y los setters de estos atributos y el método traducir dependiente del idioma de origen, que es un método virtual pues responderá de forma distinta.
+# Creador de Glosario en Chino del Español
 
-Derivadas de Texto:
-a) Texto Chino: método de traducción chino-español, además del idioma destino distinto.
-b) Texto Español: método de traducción español - chino.
+## Objetivo
+El programa traduce frases del **chino** al **español**, luego genera una lectura con **tres versiones** de la frase:
+1. La frase original en **chino** y **español**.
+2. La **pronunciación** en pinyin.
+3. La **traducción** al español.
 
-Traductor (clase principal): encargada de recibir el texto original y el idioma en el que está (español o chino). Traductor está compuesto de texto, hace uso de los métodos de texto implementando apuntadores para obtener la traducción y la pronunciación de la frase. Finalmente el traductor arma un string de lectura y otro de glosario que serán escritas en un archivo de texto y exportadas al final.
-Atributos: texto, glosario y lectura. Además tendrá acceso a los atributos de TEXTO por medio de los apuntadores como lo son el texto.original, texto.traduccion, texto.pronunciacion. Sus métodos incluyen el de armarGlosario() y armarLectura() y finalmente el de exportar() que es el encargado de pasarlo a un archivo de texto.
+Además, el programa crea un **glosario** con las palabras más usadas.
 
-Proceso ideal:
-Ingresa tu idioma origen: "Español"
-Ingresa tu texto: "Me gusta ver películas en casa".
-Traducción: "我喜欢在家看电影"
-Pronunciación: "Wǒ xǐhuān zàijiā kàn diànyǐng".
-Glosario has been exported. <- glosario.txt
-Lectura has been exported. <- lectura.txt
+## Clases
 
-Casos de Fallo
-Los casos en los que el programa fallará es si se inserta una frase en cualquier otro idioma o si no se especifica adecuadamente el idioma en el que la frase está (español, chino), si se inserta una frase en inglés, el programa fallará.
-1. No funcionará si el texto no está en chino.
-2. No funcionará si te equivocas al agregar un texto.
+### **Texto**
+Define la frase a traducir y tiene el método `traducir()`, que recibe:
+- El idioma de **origen**.
+- El idioma **destino**.
+- El **estilo**, para decidir si se obtiene la **traducción** o la **pronunciación**.
 
-**Guía de Uso**
+**Atributos**: 
+- `original`: Texto original.
+- `traducción`: Resultado de la traducción.
+- `pronunciación`: Resultado en pinyin.
 
-FAVOR DE LEER ANTES DE CORRER
-Primero compila todo usando:
-g++ *.cpp -o a
+**Métodos**:
+- Constructor con el idioma de origen.
+- Getters y setters de los atributos.
+- `traducir()`: Método virtual que varía según el idioma origen.
 
-Luego Corre el código con 
-.\a.exe
+### **Clases Derivadas**
+1. **Texto Chino**: Traducción de **chino a español** con ajustes de idioma destino.
+2. **Texto Español**: Traducción de **español a chino**.
 
-Ctrl + C para salir del código.
+### **Traductor (Clase Principal)**
+Encargado de recibir el texto original y su idioma (**español o chino**). 
+Utiliza `Texto` mediante **apuntadores** para obtener la **traducción** y la **pronunciación**.
 
-Ejemplo de pasos a seguir:
-1. Te preguntará el número de textos, elige el que quieras, recomiendo máximo 3 para evitar errores
-2. Ingresa 1 para español (recomendado), pues tendrías que meter la palabra en chino para probar textos en chino.
-3. Ingresa la palabra en minúsculas: 
-    EJEMPLO: perro, gato, hola
-4. Disfruta de la traducción
+**Atributos**:
+- `texto`: Instancia de la clase `Texto`.
+- `glosario`: Palabras más usadas en el texto.
+- `lectura`: Genera una estructura de texto lista para exportar.
 
-Notas de mejora:
-1. Cambiar el loop para agregar o modificar palabras.
-2. Hacer que el proceso no termine
-3. Ser capaz de combinar palabras para hacer frases (pendiente).
-4. Exportar
-5. Hacer lectura.
+**Métodos**:
+1. `armarGlosario()`
+2. `armarLectura()`
+3. `exportar()`: Guarda la lectura y el glosario en un archivo de texto.
+
+## Casos de Fallo
+El programa **fallará** si:
+- Se inserta un texto en otro idioma que **no sea chino ni español**.
+- No se especifica correctamente el idioma.
+- Se usan **acentos** o caracteres especiales (`Ñ, ó, ...`).
+
+## 🚀 Guía de Uso
+
+**IMPORTANTE: Leer antes de ejecutar**
+
+### Compilación
+Compila todo el código con:
+```sh
+g++ *.cpp -o traductor
+```
+
+###  Ejecución
+Corre el código:
+```sh
+.\traductor.exe
+```
+
+Para salir, usa:
+```sh
+Ctrl + C
+```
+
+### Pasos a seguir
+1. **Selecciona la cantidad de textos** (*menos es más porque no te vayas a equivocar*).
+2. **Elige el idioma**:
+   - `1` → Español (*Recomendado*).
+   - `2` → Chino.
+3. **Escribe las palabras en minúsculas**.
+   - *Ejemplo*: `perro`, `gato`, `hola`.
+4. **Disfruta :)!**
+
+---
+
+## (Notas hacia mí de lo que puedo mejorar)
+1. **Mejorar el loop** para agregar/modificar palabras.
+2. **Evitar que el programa termine después de una traducción**.
+3. **Mejorar la exportación del texto**.
+4. **Optimizar la lectura generada**.
+
+---
+
+## Ejemplo de Ejecución
+```
+----------------------------------------------
+Bienvenido al traductor ESPAÑOL - CHINO
+
+¿Cuántos textos deseas agregar?
+
+     -->  3
+---------------------------------------------
+Introduce el idioma para el texto:
+     Español [1], Chino [2]
+
+     -->  1
+Idioma seleccionado:
+         Español
+Introduce el texto original:
+     --> hola yo grande 
+
+Texto en Español creado
+
+---------------------------------------------
+Introduce el idioma para el texto:
+     Español [1], Chino [2]
+
+     -->  1 
+Idioma seleccionado:
+         Español
+Introduce el texto original:
+     --> yo amar tu
+
+Texto en Español creado
+
+---------------------------------------------
+Introduce el idioma para el texto:
+     Español [1], Chino [2]
+
+     -->  yo gustar gato
+Entrada inválida. Por favor, escribe 1 o 2.
+---------------------------------------------
+Introduce el idioma para el texto:
+     Español [1], Chino [2]
+
+     -->  1
+Idioma seleccionado:
+         Español
+Introduce el texto original:
+     --> perro bonito gato pequeño
+
+Texto en Español creado
+
+Lista de textos:
+1.  hola yo grande
+2.  yo amar tu
+3.  perro bonito gato pequeño
+
+Traduciendo...
+     Traduciendo texto en español...
+     Traduciendo texto en español...
+     Traduciendo texto en español...
+
+LISTO
+
+----------------------------------------------
+Traducciones:
+----------------------------------------------
+1
+Original: hola yo grande
+Traducción: 你好 我 大
+Pronunciación: nǐhǎo wǒ dà
+2
+Original: yo amar tu
+Traducción: 我 爱 你
+Pronunciación: wǒ ài nǐ
+3
+Original: perro bonito gato pequeño
+Traducción: 狗 漂亮 猫 [?]
+Pronunciación: gǒu piàoliang māo [?]
+----------------------------------------------
+
+----------------------------------------------
+Glosario:
+----------------------------------------------
+ORIGINAL  -   TRADUCCIÓN -  PRONUNCIACIÓN
+1
+hola -> 你好 — nǐhǎo
+yo -> 我 — wǒ
+grande -> 大 — dà
+----------------------------------------------
+2
+yo -> 我 — wǒ
+amar -> 爱 — ài
+tu -> 你 — nǐ
+----------------------------------------------
+3
+perro -> 狗 — gǒu
+bonito -> 漂亮 — piàoliang
+gato -> 猫 — māo
+pequeño -> [?] — [?]
+----------------------------------------------
+```

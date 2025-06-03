@@ -5,31 +5,35 @@
 class Texto{
     protected:
         int idioma;                     // 1 = Español,    2 = Chino
-        std::string original;           // 0 = Traducción, 1 = Pronunciación
+        std::string original;           
         std::string traduccion;
         std::string pronunciacion;
 
     public:
-        // CONSTRUCTORES
+        //   CONSTRUCTORES ========================= 
         Texto();
         Texto(int Idi, const std::string Ori); // const le quita las copias innecesarias
         virtual ~Texto                   () = default;   // DESTRUCTOR 
 
-        // SETTERS
+        //   SETTERS       ========================= 
         void setOriginal                 (std::string Ori);
         void setTraduccion               (std::string Traduccion);
         void setPronunciacion            (std::string Pronunciacion);
         void setIdioma                   (int Idioma);
 
 
-        // GETTERS
+        // GETTERS       ========================= 
         std::string getOriginal()        const      ;
         std::string getTraduccion()      const      ;
         std::string getPronunciacion()   const      ;
-        int getIdioma()                  const      ;
+        int         getIdioma()          const      ;
 
-    // MÉTODOS (sobrecarga + sobrescritura)
-    // Texto es una clase abstracta
+
+
+    // ========================= 
+    //     Metodo virtual
+    // ========================= 
+    
     virtual void traducir() = 0;
     
 };
