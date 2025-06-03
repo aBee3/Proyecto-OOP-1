@@ -148,7 +148,7 @@ Idioma seleccionado:
 Introduce el texto original:
      --> perro bonito gato pequeño
 
-Texto en Español creado
+Texto en Español creado :)
 
 Lista de textos:
 1.  hola yo grande
