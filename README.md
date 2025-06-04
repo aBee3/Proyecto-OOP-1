@@ -5,10 +5,13 @@
 El programa traduce frases del **chino** al **español**, luego genera una lectura con **tres versiones** de la frase:
 
 1. La frase original en **chino** y **español**.
+Nota: El chino no tiene conjugaciones, tus frases tendrán siempre el verbo en infinitivo. Por ejemplo "Yo correr mucho" o "gato ser grande".
+Evita usar acentos o caractéres como Ñ.
 2. La **pronunciación** en pinyin.
 3. La **traducción** al español.
 
 Además, el programa crea un **glosario** con las palabras más usadas.
+Si la palabra no está disponible en el diccionario, se mostrará **[?]**.
 
 ---
 

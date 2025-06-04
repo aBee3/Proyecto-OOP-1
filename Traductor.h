@@ -26,14 +26,9 @@ public:
 
     // SETTER
     void addTexto(Texto* nuevoTexto);
-    void setCantidad(const int&  ori);
-    void setIndex(const int& ind);
-    void setLectura(const std::string& lect);
-    void setGlosario(const std::string& glos);
-
+    
     //GETTERS
-    int getCantidad();
-    int getIndex();
+    //int getCantidad();
     std::string getGlosario();
     std::string getLectura();
 

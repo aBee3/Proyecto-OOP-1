@@ -11,7 +11,7 @@ public:
     TextoChino();
     TextoChino(const std::string& ori);
 
-    // OVERRIDE & OVERLOAD
+    // Polimorfismo
     void traducir();
 };
 

@@ -117,3 +117,73 @@ querer 想 xiǎng
 ir 去 qù
 bueno 好 hǎo
 malo 坏	huài
+ser 是 shì
+estar 在 zài
+tener 有 yǒu
+hacer 做 zuò
+decir 说 shuō
+ver 看 kàn
+oír 听 tīng
+dar 给 gěi
+saber 知道 zhīdào
+pensar 想 xiǎng
+querer 想要 xiǎngyào
+necesitar 需要 xūyào
+leer 读 dú
+escribir 写 xiě
+comer 吃 chī
+beber 喝 hē
+caminar 走 zǒu
+correr 跑 pǎo
+bailar 跳舞 tiàowǔ
+trabajar 工作 gōngzuò
+jugar 玩 wán
+dormir 睡觉 shuìjiào
+aprender 学习 xuéxí
+enseñar 教 jiāo
+comprar 买 mǎi
+vender 卖 mài
+abrir 开 kāi
+cerrar 关 guān
+esperar 等 děng
+llamar 打电话 dǎ diànhuà
+venir 来 lái
+ir 去 qù
+llegar 到 dào
+salir 出去 chūqù
+entrar 进去 jìnqù
+sentir 感觉 gǎnjué
+encontrar 找到 zhǎodào
+perder 丢失 diūshī
+pedir 请求 qǐngqiú
+ayudar 帮助 bāngzhù
+
+y 和 hé
+
+pero 但是 dànshì
+
+mas 更多 gèng duō
+
+o 或者 huòzhě
+
+porque 因为 yīnwèi
+
+aunque 虽然 suīrán
+
+cuando 当 dāng
+
+si 如果 rúguǒ
+
+que 那 nà
+
+como 如 rú
+
+hasta 直到 zhídào
+
+antes de 之前 zhīqián
+
+despues de 之后 zhīhòu
+
+mientras 同时 tóngshí
+
+ademas 而且 érqiě

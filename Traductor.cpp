@@ -33,38 +33,12 @@ Traductor::~Traductor() {
 
 
 // SETTERS
-void Traductor:: setCantidad(const int&  cant){
-    cantidad = cant;
-}
-
-void Traductor::setIndex(const int & ind){
-    index = ind;
-}
-
-void Traductor::setLectura(const std::string & lect){
-    lectura = lect;
-}
-
-void Traductor::setGlosario(const std::string & glos){
-    glosario = glos;
-}
-
-// GETTERS
-int Traductor::getCantidad(){
-    return cantidad;
-}
-
-int Traductor::getIndex(){
-    return index;
-}
-
 string Traductor::getGlosario(){
-    
-    return string(glosario);
+        return glosario;
 }
 
 string Traductor::getLectura(){
-    return string(lectura);
+    return lectura;
 }
 
 // MÉTODOS
@@ -72,7 +46,7 @@ string Traductor::getLectura(){
 void Traductor::addTexto(Texto* nuevoTexto) {
     if (index < cantidad) {
         textos[index] = nuevoTexto; // Pongo el  nuevo texto en la lista de textos
-        this-> index++;  // Movemos el índice
+        index++;  // Movemos el índice
     } else {
         cout << "No hay espacio para más textos." << endl;
     }

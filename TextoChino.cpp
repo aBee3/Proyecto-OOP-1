@@ -11,9 +11,12 @@ TextoChino::TextoChino() : Texto(2, "") {
 } // Default
 TextoChino::TextoChino(const std::string& ori) : Texto(2, ori) {}
 
+
 // Método
 void TextoChino::traducir(){
     std::cout << "     Traduciendo texto en Chino..." << std:: endl;
+
+    // Usando iftream verificamos que el archivo de diccionario esté disponible
     std::ifstream file("diccionario.txt");
     if (!file.is_open())
     {
@@ -41,8 +44,7 @@ void TextoChino::traducir(){
 
     if (!found)
     {
-        traduccion    = "[desconocido]";
-        pronunciacion = "[desconocido]";
+        traduccion    = "[?]";
+        pronunciacion = "[?]";
     }
 }
-
