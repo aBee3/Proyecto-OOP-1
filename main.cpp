@@ -1,3 +1,13 @@
+/*
+ * Proyecto Traductor CHINO - ESPAÑOL (main)
+ * Abigail Godoy Araujo
+ * A01709167
+ * 05/06/2025
+ * 
+ * El main es el encargado de crear los objetos tipos texto que serán agregados a la clase traductor el cual,
+ * es una clase abstracta, responsable de manejar los diferentes objetos tipo texto y de los métodos virtuales de traducción.
+ */
+
 
 // Librerías a utilizar
 #include <iostream>
@@ -11,16 +21,22 @@
 #include "TextoChino.h"
 #include "Texto.h"
 
-
+// Main
 int main() {
 
-    // Función manipulable con el usuario
+    // Interacción con el usuario
+    // Cambiamos el sistema para que sea capaz de leer caractéres chinos:
     system("chcp 65001");
+    
     std::cout << "\n\n----------------------------------------------\nBienvenido al traductor ESPAÑOL - CHINO\n\n"<<std::endl;
+    
+    // Variable para el manejo del programa
     int cantidad;
 
     cout << "¿Cuántos textos deseas agregar? \n\n     -->  ";
     std::cin >> cantidad;
+
+    // Ignora el salto de línea
     std::cin.ignore(); 
 
     // Inicializamos el Traductor con la cantidad de textos
@@ -45,19 +61,23 @@ int main() {
 
             std::cout << "Entrada inválida. Por favor, escribe 1 o 2.\n";
         }
+
+        // Para verificación del idioma
         std::string idiomas[] = {"Español", "Chino"};
         std::cout << "Idioma seleccionado: \n         " << idiomas[idioma-1] << std::endl;
 
+        // Recibir el idioma
         cout << "Introduce el texto original:\n     --> ";
         getline(cin, original);
 
-        // Creamos un nuevo texto Default
+        // Creamos un nuevo texto Default (AGREGACIÓN)
         Texto* nuevoTexto;
 
         //Ahora dependiendo del idioma creamos objetos de tipo individual
         if (idioma == 1) {
             // Español: se traduce al chino
             
+            // (APUNTADORES)
             nuevoTexto = new TextoEspañol(original);
             std::cout<<"\nTexto en Español creado\n\n";
         } 
@@ -67,6 +87,7 @@ int main() {
             std::cout<<"\nTexto en chino creado\n\n"<< std:: endl;
         }
 
+        //(AGREGACIÓN)
         traductor.addTexto(nuevoTexto);
     }
 
@@ -76,11 +97,8 @@ int main() {
     traductor.traducir();
     traductor.mostrarTraducciones();
     traductor.armarGlosario();
-    // Esto queda por arreglarse, se verá después
     std::cout<< traductor.getGlosario()<<std::endl;
-    std::cout<<"你好世界"<<endl;
-
-    //changed this
+    std::cout<<"回头见"<<endl;
 
     return 0;
 }

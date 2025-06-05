@@ -205,3 +205,7 @@ pequeo -> [?] — [?]
 
 你好世界
 ```
+## Referencias
+Git - gitignore Documentation, https://git-scm.com/docs/gitignore.
+
+W3Schools.com. (n.d.). https://www.w3schools.com/cpp/ref_fstream_fstream.asp

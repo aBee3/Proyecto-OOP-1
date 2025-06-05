@@ -1,3 +1,16 @@
+
+/*
+ * Proyecto Traductor CHINO - ESPAÑOL (Texto.cpp)
+ * Abigail Godoy Araujo
+ * A01709167
+ * 05/06/2025
+ * 
+ * Define los métodos del header Texto, la cual es la clase abstracta para los dos tipos de texto (Español y Chino).
+ * Pueden haber más sentidos de traducción de tipo texto.
+ * Encargado del método de buscar y regresar la traducción y la pronunciación.
+ * 
+ */
+
 #include <iostream>
 #include "Texto.h"
 #include <vector>
@@ -11,25 +24,6 @@ Texto::Texto(): original(""), traduccion(""), pronunciacion(""), idioma(0){};
 Texto::Texto(int Idi, const std::string Ori)
     : idioma(Idi), original(Ori), traduccion(""), pronunciacion("") {};
 
-
-// ====================================================
-//                      SETTERS 
-// ====================================================
-void Texto::setOriginal(std::string Ori) {
-    this->original = Ori;
-}
-
-void Texto::setTraduccion(std::string txt) {
-    this->traduccion = txt;
-}
-
-void Texto::setPronunciacion(std::string txt) {
-    this->pronunciacion = txt;
-}
-
-void Texto::setIdioma(int idi) {
-    this->idioma = idi;
-}
 
 // ====================================================
 //                         GETTERS

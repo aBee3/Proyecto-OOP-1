@@ -1,7 +1,17 @@
+/*
+ * Proyecto Traductor CHINO - ESPAÑOL (Texto Español .cpp)
+ * Abigail Godoy Araujo
+ * A01709167
+ * 05/06/2025
+ * 
+ * Clase hija de TEXTO. Tiene el atributo original en chino y la traducción a español. La pronunciación es siempre en chino.
+ */
+
 #include "TextoEspañol.h"
 #include <iostream>
 
 // Librerías para la lectura del diccionario: 
+// La documentación para leer el texto fue obtenido de (W3Schools.Com, n.d.).
 #include <fstream>
 #include <sstream>
 
@@ -12,7 +22,10 @@ TextoEspañol::TextoEspañol() : Texto(1, "") {
 
 void TextoEspañol::traducir() {
     std::cout << "     Traduciendo texto en español..." << std::endl;
+
+    // Usando librería leemos el texto en diccionario.txt
     std::ifstream file("diccionario.txt"); // abre el diccionario y lo lee
+
     if (!file.is_open()) {
         traduccion    = "[diccionario no disponible]";
         pronunciacion = "[diccionario no disponible]";
@@ -26,11 +39,12 @@ void TextoEspañol::traducir() {
         }
     }
 
-    // Como quiero usar grases creamos la frase en chino y en español
+    // Como quiero usar frases creamos la frase en chino y en español
+    // CHino ESPañol PINyin (pronunciación)
     std::string palabra   = "";
-    std::string fraseZH   = "";
+    std::string fraseCH   = "";
     std::string frasePIN  = "";
-    std::string esp, zh, pin;
+    std::string esp, ch, pin;
 
     int i = 0;
     while (i < original.length()) {
@@ -46,12 +60,14 @@ void TextoEspañol::traducir() {
 
         // Buscar la palabra en el diccionario
         std::ifstream diccionario("diccionario.txt");
+
+        // Por default no está encontrada
         bool found = false;
 
         // el métodp que tenía antes
-        while (diccionario >> esp >> zh >> pin) {
+        while (diccionario >> esp >> ch >> pin) {
             if (palabra == esp) {
-                fraseZH  += zh + " ";             // aquí ahora ya puedes juntar frases
+                fraseCH  += ch + " ";             // aquí ahora ya puedes juntar frases
                 frasePIN += pin + " ";
                 found = true;
                 break;
@@ -59,7 +75,7 @@ void TextoEspañol::traducir() {
         }
 
         if (!found) {
-            fraseZH  += "[?] ";                  // cambio desconocido por ?
+            fraseCH  += "[?] ";                  // cambio desconocido por ?
             frasePIN += "[?] ";
         }
 
@@ -68,6 +84,8 @@ void TextoEspañol::traducir() {
     }
 
     // Returns 
-    traduccion    = fraseZH;
+    traduccion    = fraseCH;
     pronunciacion = frasePIN;
 }
+
+// FINAL

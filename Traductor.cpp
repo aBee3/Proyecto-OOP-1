@@ -1,4 +1,17 @@
+/*
+ * Proyecto Traductor CHINO - ESPAÑOL (Traductor .cpp)
+ * Abigail Godoy Araujo
+ * A01709167
+ * 05/06/2025
+ * 
+ * Encargada de manejar los textos, definimos los constructores default, inicializa el arreglo para sostener apuntadores de tipo texto 
+ * haciendo uso del doble apuntador.
+ * 
+ */
+
+
 #include "Traductor.h"
+#include "TextoEspañol.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -7,7 +20,7 @@ using namespace std;
 Traductor::Traductor(){
     index = 0;
     cantidad = 10;
-    textos = new Texto*[cantidad];
+    textos = new Texto*[cantidad];           // (AGREGACIÓN) Inicializamos un arreglo de tamaño fijo
     idioma   =  1;        
     lectura  = "";
     glosario = "";
@@ -18,18 +31,9 @@ Traductor::Traductor(){
 Traductor::Traductor(int cantidad) : cantidad(cantidad), index(0) {
     textos = new Texto*[cantidad];
     for (int i = 0; i < cantidad; i++) {
-        textos[i] = nullptr;
+        textos[i] = new TextoEspañol();       // Creamos un objeto en el heap y que sea tipo apuntador porque el arreglo es de tipo apuntador.                                       
     }
 }
-
-// DESTRUCTOR
-Traductor::~Traductor() {
-    for (int i = 0; i < cantidad; i++) {
-        delete textos[i]; 
-    }
-    delete[] textos; 
-}
-
 
 
 // SETTERS
