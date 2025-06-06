@@ -1,4 +1,5 @@
 hola 你好 nǐhǎo
+pero 但是 dànshì
 adiós 再见 zàijiàn
 gracias 谢谢 xièxiè
 sí 是 shì
@@ -29,6 +30,7 @@ escribir 写 xiě
 escuchar 听 tīng
 hablar 说 shuō
 viajar 旅行 lǚxíng
+y 和 hé
 ciudad 城市 chéngshì
 país 国家 guójiā
 coche 车 chē
@@ -98,15 +100,12 @@ vivir 生活 shēnghuó
 morir 死 sǐ
 nacer 出生 chūshēng
 llamar 叫 jiào
-
-
-
 yo 我 wǒ
 tu 你 nǐ
 el 他 nǐ
 ella 她	tā
-nosotros 我们	wǒmen
-vosotros 你们	nǐmen
+nosotros 我们 wǒmen
+vosotros 你们 nǐmen
 ellos 他们 tāmen
 ellas 她们 tāmen
 gustar 喜欢 xǐhuān
@@ -157,10 +156,8 @@ encontrar 找到 zhǎodào
 perder 丢失 diūshī
 pedir 请求 qǐngqiú
 ayudar 帮助 bāngzhù
-y 和 hé
 pero 但是 dànshì
 mas 更多 gèng duō
-o 或者 huòzhě
 porque 因为 yīnwèi
 aunque 虽然 suīrán
 cuando 当 dāng
@@ -172,3 +169,5 @@ antes de 之前 zhīqián
 despues de 之后 zhīhòu
 mientras 同时 tóngshí
 ademas 而且 érqiě
+y 和 hé
+o 或者 huòzhě

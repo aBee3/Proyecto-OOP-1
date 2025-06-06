@@ -32,7 +32,7 @@ void TextoEspañol::traducir() {
         return;
     }
 
-    // Esto me quita problemas con las minúsculas
+    // Esto quita problemas con las minúsculas
     for (char& c : original) {
         if (c >= 'A' && c <= 'Z') {
             c += ('a' - 'A');
@@ -64,7 +64,9 @@ void TextoEspañol::traducir() {
         // Por default no está encontrada
         bool found = false;
 
-        // el métodp que tenía antes
+        // De la librería se usa >> (como con cin) para extraer caracteres y continúa hasta que encuentre la palabra
+        //(GeeksforGeeks, 2025)
+        
         while (diccionario >> esp >> ch >> pin) {
             if (palabra == esp) {
                 fraseCH  += ch + " ";             // aquí ahora ya puedes juntar frases

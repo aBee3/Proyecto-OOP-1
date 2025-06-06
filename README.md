@@ -209,3 +209,5 @@ pequeo -> [?] — [?]
 Git - gitignore Documentation, https://git-scm.com/docs/gitignore.
 
 W3Schools.com. (n.d.). https://www.w3schools.com/cpp/ref_fstream_fstream.asp
+
+GeeksforGeeks. (2025, May 14). Basic input / output in C++. GeeksforGeeks. https://www.geeksforgeeks.org/basic-input-output-c/

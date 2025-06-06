@@ -92,12 +92,20 @@ int main() {
     }
 
     // Mostramos los textos guardados en el Traductor
-    traductor.mostrarTextos(); 
-    std::cout<< "\n"<<std::endl;
-    traductor.traducir();
-    traductor.mostrarTraducciones();
+    traductor.armarLectura();
     traductor.armarGlosario();
-    std::cout<< traductor.getGlosario()<<std::endl;
+    std::cout<< traductor.getGlosario() << std::endl;
+
+    std::cout << "Deseas exportar los contenidos?\n [1] SI [2] NO\n"<<std::endl;
+    std::cin >> cantidad;
+    if (cantidad == 1){
+        std::string nombreArchivo;
+        std::cout <<"Ingrese el nombre del archivo:\n    -->    "<<std::endl;
+        std::cin >> nombreArchivo;
+        traductor.exportar(nombreArchivo);
+    }
+
+
     std::cout<<"回头见"<<endl;
 
     return 0;

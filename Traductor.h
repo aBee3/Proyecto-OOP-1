@@ -40,14 +40,14 @@ public:
     void traducir();
     void addTexto(Texto* nuevoTexto);
     void armarGlosario();
-    void armarLectura(const std::string& trad, const std::string& pron);
+    void armarLectura();
 
     // Métodos reales
-    void mostrarTraducciones() const;
-    void mostrarPronunciaciones() const;
-    void mostrarTextos() const;
-    void ejemplo() const;
-    void exportar() const;
+    void mostrarTraducciones() ;
+    void mostrarPronunciaciones() ;
+    void mostrarTextos() ;
+
+    void exportar(const std::string& nombreArchivo) ;
 };
 
 #endif

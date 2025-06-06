@@ -38,7 +38,7 @@ Traductor::Traductor(int cantidad) : cantidad(cantidad), index(0) {
 
 // SETTERS
 string Traductor::getGlosario(){
-        return glosario;
+    return glosario;
 }
 
 string Traductor::getLectura(){
@@ -57,7 +57,6 @@ void Traductor::addTexto(Texto* nuevoTexto) {
 }
 
 
-
 void Traductor::traducir(){
     std::cout << "Traduciendo..."<<std::endl;
     for (int i = 0; i < cantidad; i++) {
@@ -68,14 +67,14 @@ void Traductor::traducir(){
 
 void Traductor::armarGlosario()
 {
-    std::cout << "----------------------------------------------\n"
-                 " Glosario:\n"
-                 "----------------------------------------------" << std::endl;
-    std::cout << "ORIGINAL  -   TRADUCCIÓN -  PRONUNCIACIÓN\n";
+    glosario = "----------------------------------------------\n"
+               " Glosario:\n"
+               "----------------------------------------------\n";
+    glosario += "ORIGINAL  -   TRADUCCIÓN -  PRONUNCIACIÓN\n";
 
     for (int i = 0; i < cantidad; ++i)
     {
-        std::cout << i + 1 << std::endl;
+        glosario += std::to_string(i + 1) + ".\n";
 
         std::string original      = textos[i]->getOriginal();
         std::string traduccion    = textos[i]->getTraduccion();
@@ -90,76 +89,107 @@ void Traductor::armarGlosario()
         while (o < lenO || t < lenT || p < lenP)
         {
             // palabra original
-            std::string palabraO = "";
+            std::string palabraO;
             while (o < lenO && original[o] != ' ')
-            {
-                palabraO += original[o];
-                o++;
-            }
+                palabraO += original[o++];
             o++;
 
             // palabra traducción
-            std::string palabraT = "";
+            std::string palabraT;
             while (t < lenT && traduccion[t] != ' ')
-            {
-                palabraT += traduccion[t];
-                t++;
-            }
+                palabraT += traduccion[t++];
             t++;
 
             // palabra pronunciación
-            std::string palabraP = "";
+            std::string palabraP;
             while (p < lenP && pronunciacion[p] != ' ')
-            {
-                palabraP += pronunciacion[p];
-                p++;
-            }
+                palabraP += pronunciacion[p++];
             p++;
 
-            // mostrar el resultadol
-            std::cout << palabraO << " -> " << palabraT << " — " << palabraP << std::endl;
+            // Agregar la línea al glosario
+            glosario += palabraO + " -> " + palabraT + " — " + palabraP + "\n";
         }
 
-        std::cout << "----------------------------------------------\n";
+        glosario += "----------------------------------------------\n";
     }
 }
 
 
-void Traductor::armarLectura(const std::string& traduccion, const std::string& pronunciacion){}
+
+void Traductor::armarLectura(){
+    mostrarTextos(); 
+    std::cout<< "\n"<<std::endl;
+    traducir();
+    mostrarTraducciones();
+}
 
 // MÉTODOS
-void Traductor::mostrarTraducciones()   const {
-    std::cout << "----------------------------------------------\nTraducciones: \n----------------------------------------------"<<std::endl;
-    for (int i = 0; i < cantidad; i++) {
-        std::cout << i +1 << std::endl;
-        std::string original = textos[i] -> getOriginal();
-        std::cout << "Original: "<< original << std::endl;
-        std::string traduccion = textos[i] -> getTraduccion();
-        std::cout << "Traducción: "<< traduccion << std::endl;
-        std::string pronunciacion = textos[i] -> getPronunciacion();
-        std::cout << "Pronunciación: "<< pronunciacion << std::endl;
-    }
-    std::cout <<"----------------------------------------------\n"<< std::endl;
-}
-void Traductor::mostrarPronunciaciones()const { /* falta */ }
+void Traductor::mostrarTraducciones() {
+    lectura = "----------------------------------------------\n"
+               "Traducciones:\n"
+               "----------------------------------------------\n";
 
-void Traductor::mostrarTextos() const {
-    cout << "Lista de textos:" << endl;
+    for (int i = 0; i < cantidad; i++) {
+        lectura += std::to_string(i + 1) + "\n";
+        lectura += "Original: " + textos[i]->getOriginal() + "\n";
+        lectura += "Traducción: " + textos[i]->getTraduccion() + "\n";
+        lectura += "Pronunciación: " + textos[i]->getPronunciacion() + "\n";
+    }
+
+    lectura += "----------------------------------------------\n\n";
+
+    std::cout << lectura;  // Print after modifying
+}
+
+void Traductor::mostrarPronunciaciones() { 
+    lectura += "----------------------------------------------\n"
+               "Pronunciaciones:\n"
+               "----------------------------------------------\n";
+
+    for (int i = 0; i < cantidad; i++) {
+        lectura += std::to_string(i + 1) + "\n";
+        lectura += "Traducción: " + textos[i]->getTraduccion() + "\n";
+        lectura += "Pronunciación: " + textos[i]->getPronunciacion() + "\n";
+    }
+
+    lectura += "----------------------------------------------\n\n";
+
+    std::cout << lectura;  // Print after modifying
+}
+
+void Traductor::mostrarTextos()  {
+    lectura += "Lista de textos:\n";
+
     for (int i = 0; i < cantidad; i++) {
         if (textos[i] != nullptr) {
-            cout << i+1 <<".  "<< textos[i]->getOriginal() << endl; 
-        }
-        else {
-            cout << "Error: textos[" << i << "] es nullptr." << endl;
+            lectura += std::to_string(i + 1) + ".  " + textos[i]->getOriginal() + "\n";
+        } else {
+            lectura += "Error: textos[" + std::to_string(i) + "] no existe.\n";
         }
     }
+
+    lectura += "----------------------------------------------\n\n";
+
+    std::cout << lectura;  
 }
+
 
 
 // Exportar lo hecho por el traductor a formato de texto
-void Traductor::exportar()            const { /* falta */ }
 
-// Método para crear ejemplos de traductores
-void Traductor::ejemplo()             const {
-    
+#include <fstream>  // Librería para los archivos
+
+void Traductor::exportar(const std::string& nombreArchivo)
+{
+    std::ofstream archivo(nombreArchivo);  // Crear un archivo nuevo con el nombre
+
+    if (archivo.is_open()) {
+        archivo << glosario;  // Escribe lo que hay en el glosario
+        archivo << lectura;
+        archivo.close();       // Close the file
+        std::cout << "Se exportó tu glosario ^^ : " << nombreArchivo << std::endl;
+    } else {
+        std::cerr << "ERROR!: " << nombreArchivo << std::endl;
+    }
 }
+

@@ -23,9 +23,10 @@ class Texto{
         //   CONSTRUCTORES ========================= 
         Texto();
         Texto(int Idi, const std::string Ori); // const le quita las copias innecesarias
-        virtual ~Texto                   () = default;   // DESTRUCTOR 
+       
 
         // GETTERS       ========================= 
+        // No tienen uso real
         std::string getOriginal()        const      ;
         std::string getTraduccion()      const      ;
         std::string getPronunciacion()   const      ;
