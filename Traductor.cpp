@@ -14,6 +14,9 @@
 #include "TextoEspañol.h"
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <string>
 using namespace std;
 
 // CONSTRUCTOR
@@ -172,6 +175,32 @@ void Traductor::mostrarTextos()  {
 
     std::cout << lectura;  
 }
+
+std::string Traductor::leerDiccionarioEsp(){
+    std::ifstream archivo("diccionario.txt");;
+    std::string linea, palabra, palabrasEsp;
+    bool esp = true; 
+
+    if (archivo.is_open() == false) {
+        return "Cierra el diccionario antes de usar: \n";
+    }
+
+    while (std::getline(archivo, linea)) {
+        std::istringstream stream(linea);
+        stream >> palabra;  
+
+        if (esp) {
+            palabrasEsp = palabra;  
+            esp = false;
+        } else {
+            palabrasEsp += " " + palabra;
+        }
+    }
+
+    archivo.close();
+    return palabrasEsp;
+}
+
 
 
 

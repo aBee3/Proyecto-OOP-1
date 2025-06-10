@@ -46,6 +46,7 @@ public:
     void mostrarTraducciones() ;
     void mostrarPronunciaciones() ;
     void mostrarTextos() ;
+    std::string leerDiccionarioEsp();
 
     void exportar(const std::string& nombreArchivo) ;
 };

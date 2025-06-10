@@ -30,6 +30,7 @@ int main() {
     
     std::cout << "\n\n----------------------------------------------\nBienvenido al traductor ESPAÑOL - CHINO\n\n"<<std::endl;
     
+
     // Variable para el manejo del programa
     int cantidad;
 
@@ -41,6 +42,9 @@ int main() {
 
     // Inicializamos el Traductor con la cantidad de textos
     Traductor traductor(cantidad); //
+
+    std::string palabrasenespañol = traductor.leerDiccionarioEsp();
+    std::cout << "Palabras que puedes usar:\n---------------------------------\n"<< palabrasenespañol <<std::endl; 
 
     for (int i = 0; i < cantidad; i++) {
         int idioma = 0;
@@ -92,6 +96,8 @@ int main() {
     }
 
     // Mostramos los textos guardados en el Traductor
+
+
     traductor.armarLectura();
     traductor.armarGlosario();
     std::cout<< traductor.getGlosario() << std::endl;

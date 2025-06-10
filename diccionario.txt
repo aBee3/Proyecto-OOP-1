@@ -1,8 +1,8 @@
 hola 你好 nǐhǎo
 pero 但是 dànshì
-adiós 再见 zàijiàn
+adios 再见 zàijiàn
 gracias 谢谢 xièxiè
-sí 是 shì
+si 是 shì
 no 不 bù
 agua 水 shuǐ
 comida 饭 fàn
@@ -32,7 +32,7 @@ hablar 说 shuō
 viajar 旅行 lǚxíng
 y 和 hé
 ciudad 城市 chéngshì
-país 国家 guójiā
+pais 国家 guójiā
 coche 车 chē
 tren 火车 huǒchē
 avión 飞机 fēijī
@@ -45,9 +45,9 @@ grande 大 dà
 pequeño 小 xiǎo
 largo 长 cháng
 corto 短 duǎn
-rápido 快 kuài
+rapido 快 kuài
 lento 慢 màn
-frío 冷 lěng
+frio 冷 lěng
 caliente 热 rè
 rojo 红色 hóngsè
 azul 蓝色 lánsè
@@ -70,7 +70,7 @@ cerrar 关 guān
 bien 好 hǎo
 mal 坏 huài
 primero 第一 dìyī
-último 最后 zuìhòu
+ultimo 最后 zuìhòu
 mucho 多 duō
 poco 少 shǎo
 llover 下雨 xiàyǔ
@@ -122,7 +122,7 @@ tener 有 yǒu
 hacer 做 zuò
 decir 说 shuō
 ver 看 kàn
-oír 听 tīng
+oir 听 tīng
 dar 给 gěi
 saber 知道 zhīdào
 pensar 想 xiǎng
@@ -139,7 +139,7 @@ trabajar 工作 gōngzuò
 jugar 玩 wán
 dormir 睡觉 shuìjiào
 aprender 学习 xuéxí
-enseñar 教 jiāo
+ensenar 教 jiāo
 comprar 买 mǎi
 vender 卖 mài
 abrir 开 kāi
@@ -165,8 +165,6 @@ si 如果 rúguǒ
 que 那 nà
 como 如 rú
 hasta 直到 zhídào
-antes de 之前 zhīqián
-despues de 之后 zhīhòu
 mientras 同时 tóngshí
 ademas 而且 érqiě
 y 和 hé

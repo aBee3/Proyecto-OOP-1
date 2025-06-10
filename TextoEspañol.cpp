@@ -17,7 +17,7 @@
 
 // CONSTRUCTOR
 TextoEspañol::TextoEspañol() : Texto(1, "") {
-    std::cout<<"Construyendo texto en español..." << std:: endl;
+    std::cout<<"Texto creado\n" << std:: endl;
 }
 
 void TextoEspañol::traducir() {
