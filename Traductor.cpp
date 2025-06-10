@@ -33,9 +33,6 @@ Traductor::Traductor(){
 
 Traductor::Traductor(int cantidad) : cantidad(cantidad), index(0) {
     textos = new Texto*[cantidad];
-    for (int i = 0; i < cantidad; i++) {
-        textos[i] = new TextoEspañol();       // Creamos un objeto en el heap y que sea tipo apuntador porque el arreglo es de tipo apuntador.                                       
-    }
 }
 
 
