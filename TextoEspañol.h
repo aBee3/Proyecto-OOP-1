@@ -17,11 +17,26 @@ class TextoEspañol : public Texto
 {
 public:
     // CONSTRUCTOR
+    
     TextoEspañol();
     TextoEspañol(const std::string& ori) : Texto(1, ori) {}
 
     // OVERRIDE & OVERLOAD
+    
     void traducir();
+    /**
+     * traducir() es un método sobre-escrito que busca la palabra en español 
+     * y regresa la palabra en chino, además de la pronunciación.
+     * Abre el diccionario, guarda las palabras buscando el texto en español,
+     * regresa las traducciones y rellena los datos faltantes.
+     * Si no lo encuentra, regresa [?]
+     * 
+     *
+     * @param
+     * @return 
+     */
+
+    
 };
 
 #endif
