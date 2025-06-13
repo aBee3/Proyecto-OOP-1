@@ -44,7 +44,7 @@ void TextoChino::traducir(){
 
     while (file >> esp >> ch >> pin)
     {
-        if (original == ch)               // buscamos por (la pronunciaciòn) en chino
+        if (original == ch)               // buscamos por (el caracter) en chino
         {
             traduccion    = esp;          // Polimorfismo: Chino a Español
             pronunciacion = pin;          // pinyin
